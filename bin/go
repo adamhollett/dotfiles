@@ -12,3 +12,6 @@ ln -sf ~/dotfiles/bash/.inputrc         ~/.inputrc
 ln -sf ~/dotfiles/git/.gitconfig        ~/.gitconfig
 ln -sf ~/dotfiles/git/.gitignore_global ~/.gitignore_global
 
+## ruby
+
+ln -sf ~/dotfiles/ruby/.rubocop.yml     ~/.rubocop.yml

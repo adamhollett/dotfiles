@@ -1,0 +1,3 @@
+# Use Shopify Ruby style
+inherit_from:
+  - https://shopify.github.io/ruby-style-guide/rubocop.yml
