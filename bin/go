@@ -2,4 +2,8 @@
 
 # Symlinks
 
-ln -sf ~/dotfiles/.bashrc ~/.bashrc
+## bash
+
+ln -sf ~/dotfiles/bash/.bashrc          ~/.bashrc
+ln -sf ~/dotfiles/bash/.inputrc         ~/.inputrc
+
