@@ -1,0 +1,14 @@
+[user]
+	name = Adam Hollett
+	email = mail@adamhollett.com
+
+[core]
+	editor = nano
+
+[fetch]
+	prune = true
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

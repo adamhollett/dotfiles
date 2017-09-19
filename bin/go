@@ -7,3 +7,8 @@
 ln -sf ~/dotfiles/bash/.bashrc          ~/.bashrc
 ln -sf ~/dotfiles/bash/.inputrc         ~/.inputrc
 
+## git
+
+ln -sf ~/dotfiles/git/.gitconfig        ~/.gitconfig
+ln -sf ~/dotfiles/git/.gitignore_global ~/.gitignore_global
+
