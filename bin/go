@@ -5,6 +5,7 @@
 ## bash
 
 ln -sf ~/dotfiles/bash/.bashrc          ~/.bashrc
+ln -sf ~/dotfiles/bash/.profile         ~/.profile
 ln -sf ~/dotfiles/bash/.inputrc         ~/.inputrc
 
 ## git
