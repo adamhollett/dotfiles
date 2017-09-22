@@ -1,0 +1,4 @@
+# .inputrc is the readline initialization file.
+
+# Make tab-completion ignore letter casing
+set completion-ignore-case On

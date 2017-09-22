@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
-
 ## git
 
 alias    g='git'
