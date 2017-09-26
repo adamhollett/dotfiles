@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
-
 # Only show the last two directories of the current path
 PROMPT_DIRTRIM=2
 
