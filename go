@@ -22,6 +22,11 @@ symlink_to_home shell/.inputrc
 symlink_to_home shell/bash/.bash_profile
 symlink_to_home shell/bash/.bashrc
 
+### zsh
+
+symlink_to_home shell/zsh/.zprofile
+symlink_to_home shell/zsh/.zshrc
+
 ## git
 
 symlink_to_home git/.gitconfig
