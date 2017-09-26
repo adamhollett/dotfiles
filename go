@@ -34,4 +34,5 @@ symlink_to_home git/.gitignore_global
 
 ## ruby
 
+symlink_to_home ruby/.ruby-version
 symlink_to_home ruby/.rubocop.yml
