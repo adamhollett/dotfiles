@@ -1,3 +1,7 @@
+## brew
+
+alias cask='brew cask'
+
 ## git
 
 alias    g='git'
@@ -16,6 +20,10 @@ alias  gbc='git checkout -b'
 alias  gbd='git branch --delete'
 alias  gbD='git branch --delete --force'
 alias  gco='git checkout'
+
+### clean
+
+alias gbDc='git branch --merged | egrep -v "(^\*|master|dev)" | xargs git branch -d'
 
 ### fetch
 
