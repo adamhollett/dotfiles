@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/bin/sh
 
 # Symlinks
 
@@ -8,10 +8,14 @@ symlink_to_home() {
   if [ -f $FILE ]
   then
     # Symlink the file to the home directory
-    echo "Creating symlink for $(basename $FILE)"
+    echo "Linking $(basename $FILE)"
     ln -sf $FILE ~/$(basename $FILE)
   fi
 }
+
+echo ''
+echo '› create symlinks'
+echo ''
 
 ## shell
 
@@ -36,3 +40,17 @@ symlink_to_home ~/dotfiles/git/.gitignore_global
 
 symlink_to_home ~/dotfiles/ruby/.ruby-version
 symlink_to_home ~/dotfiles/ruby/.rubocop.yml
+
+## brew
+
+symlink_to_home ~/dotfiles/brew/Brewfile
+
+# Applications
+
+cd ~
+
+echo ''
+echo '› install and update apps'
+echo ''
+
+brew bundle

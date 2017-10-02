@@ -1,0 +1,29 @@
+cask_args appdir: '/Applications'
+
+tap 'caskroom/cask'
+tap 'caskroom/drivers'
+tap 'caskroom/fonts'
+
+## Languages
+brew 'go'
+brew 'node'
+brew 'python3'
+
+## Shells
+brew 'bash'
+brew 'zsh'
+
+brew 'git'
+brew 'mas'
+brew 'vale'
+
+## Applications
+
+cask 'textexpander'
+
+## Fonts
+cask 'font-hack'
+cask 'font-open-sans'
+cask 'font-source-sans-pro'
+cask 'font-source-serif-pro'
+cask 'font-source-code-pro'
