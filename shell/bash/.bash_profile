@@ -8,3 +8,6 @@ source ~/dotfiles/shell/options.sh
 source ~/dotfiles/shell/aliases.sh
 
 source ~/dotfiles/shell/bash/prompt.sh
+
+# Add dev source
+source /opt/dev/dev.sh
