@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Symlinks
+## Functions
 
 symlink_to_home() {
   FILE=$1
@@ -13,33 +13,35 @@ symlink_to_home() {
   fi
 }
 
+## Symlinks
+
 print_header 'create symlinks'
 
-## shell
-
-symlink_to_home ~/dotfiles/shell/.inputrc
-
-### bash
-
-symlink_to_home ~/dotfiles/shell/bash/.bash_profile
-symlink_to_home ~/dotfiles/shell/bash/.bashrc
-
-### zsh
-
-symlink_to_home ~/dotfiles/shell/zsh/.zprofile
-symlink_to_home ~/dotfiles/shell/zsh/.zshrc
-
-## git
+### git
 
 symlink_to_home ~/dotfiles/git/.gitconfig
 symlink_to_home ~/dotfiles/git/.gitignore_global
 
-## ruby
+### shell
+
+symlink_to_home ~/dotfiles/shell/.inputrc
+
+#### bash
+
+symlink_to_home ~/dotfiles/shell/bash/.bash_profile
+symlink_to_home ~/dotfiles/shell/bash/.bashrc
+
+#### zsh
+
+symlink_to_home ~/dotfiles/shell/zsh/.zprofile
+symlink_to_home ~/dotfiles/shell/zsh/.zshrc
+
+### ruby
 
 symlink_to_home ~/dotfiles/ruby/.ruby-version
 symlink_to_home ~/dotfiles/ruby/.rubocop.yml
 
-## brew
+### brew
 
 symlink_to_home ~/dotfiles/brew/Brewfile
 
