@@ -15,7 +15,7 @@ case $OSTYPE in
     print_header 'operating system detected as macOS'
     source os/macos.sh
     ;;
-  msys)
+  msys*)
     print_header 'operating system detected as Windows'
     source os/windows.sh
     ;;
