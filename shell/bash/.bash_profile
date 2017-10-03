@@ -9,5 +9,7 @@ source ~/dotfiles/shell/aliases.sh
 
 source ~/dotfiles/shell/bash/prompt.sh
 
-# Add dev source
-source /opt/dev/dev.sh
+# Add dev source if it exists
+if [[ -s '/opt/dev/dev.sh' ]]; then
+  source '/opt/dev/dev.sh'
+fi
