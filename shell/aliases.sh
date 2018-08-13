@@ -4,8 +4,6 @@ alias cask='brew cask'
 
 ## git
 
-alias    g='git'
-
 ### working copy (status)
 
 alias  gws='git status --short'

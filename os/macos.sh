@@ -31,25 +31,7 @@ symlink_to_home ~/dotfiles/shell/.inputrc
 symlink_to_home ~/dotfiles/shell/bash/.bash_profile
 symlink_to_home ~/dotfiles/shell/bash/.bashrc
 
-#### zsh
-
-symlink_to_home ~/dotfiles/shell/zsh/.zprofile
-symlink_to_home ~/dotfiles/shell/zsh/.zshrc
-
 ### ruby
 
 symlink_to_home ~/dotfiles/ruby/.ruby-version
 symlink_to_home ~/dotfiles/ruby/.rubocop.yml
-
-### brew
-
-symlink_to_home ~/dotfiles/brew/Brewfile
-
-
-# Applications
-
-cd ~
-
-print_header 'install and update apps'
-
-brew bundle
