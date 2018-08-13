@@ -35,3 +35,7 @@ symlink_to_home ~/dotfiles/shell/bash/.bashrc
 
 symlink_to_home ~/dotfiles/ruby/.ruby-version
 symlink_to_home ~/dotfiles/ruby/.rubocop.yml
+
+### editors
+
+symlink_to_home ~/dotfiles/editor/.editorconfig
