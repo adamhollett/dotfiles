@@ -7,3 +7,11 @@
 
 [fetch]
 	prune = true
+
+[rebase]
+	autoStash = true
+
+[help]
+  # If autocorrect comes up with only one suggestion, automatically run it after
+  # a delay (in decaseconds)
+	autoCorrect = 20
