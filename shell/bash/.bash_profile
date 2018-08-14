@@ -8,5 +8,5 @@ source ~/dotfiles/shell/aliases.sh
 
 source ~/dotfiles/shell/bash/prompt.sh
 
-# Add dev source if it exists
+# Add dev if it's present
 if [[ -f /opt/dev/dev.sh ]] && [[ $- == *i* ]]; then source /opt/dev/dev.sh; fi
