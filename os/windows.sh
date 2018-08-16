@@ -1,18 +1,5 @@
 #!/bin/sh
 
-## Functions
-
-symlink_to_home() {
-  FILE=$1
-  # Only take action if the input file exists
-  if [ -f $FILE ]
-  then
-    # Symlink the file to the home directory
-    echo "Linking $(basename $FILE)"
-    ln -sf $FILE ~/$(basename $FILE)
-  fi
-}
-
 ## Symlinks
 
 print_header 'create symlinks'
