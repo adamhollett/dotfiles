@@ -1,28 +1,28 @@
 git_info () {
-  local branch=''
-  local status=''
+  local branch=""
+  local status=""
   
   # Determine if we're in a git repo
-  local branchCheck=`git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
-  if [[ ! $branchCheck == '' ]]; then
+  local branchCheck=`git branch 2> /dev/null | sed -e "/^[^*]/d" -e "s/* \(.*\)/\1/"`
+  if [[ ! $branchCheck == "" ]]; then
     
     # Determine the state of the branch
     local statusCheck=`git status --porcelain 2> /dev/null`
-    if [[ ! $statusCheck == '' ]]; then
-      status='○'
+    if [[ ! $statusCheck == "" ]]; then
+      status="○"
     else
-      status='●'
-      # status='◒'
+      status="●"
+      # status="◒"
     fi
     
-    # Don't show the branch name if it's 'master'
-    if [[ $branchCheck == 'master' ]]; then
-      branch=''
+    # Don't show the branch name if it's "master"
+    if [[ $branchCheck == "master" ]]; then
+      branch=""
     else
       branch="$branchCheck "
     fi
 
-    echo -e "\e[32m$branch$status\e[m "
+    printf "\e[32m$branch$status\e[m "
   fi
   return
 }
