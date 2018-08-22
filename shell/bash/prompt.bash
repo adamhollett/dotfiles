@@ -33,6 +33,6 @@ PROMPT_DIRTRIM=2
 CURRENT_PATH="\[\e[94m\]\w\[\e[m\]"
 
 # Some colourful chevrons
-CHEVRONS="\[\e[31m\]❯\[\e[35m\]❯\[\e[34m\]❯\[\e[m\]"
+CHEVRONS="\[\e[91m\]❯\[\e[95m\]❯\[\e[94m\]❯\[\e[m\]"
 
 export PS1="$CURRENT_PATH \`git_info\`$CHEVRONS "
