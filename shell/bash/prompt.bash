@@ -9,20 +9,19 @@ git_info () {
     # Determine the state of the branch
     local statusCheck=`git status --porcelain 2> /dev/null`
     if [[ ! $statusCheck == "" ]]; then
-      status="○"
+      status="\e[93m○\e[m"
     else
-      status="●"
-      # status="◒"
+      status="\e[92m●\e[m"
     fi
     
     # Don't show the branch name if it's "master"
     if [[ $branchCheck == "master" ]]; then
       branch=""
     else
-      branch="$branchCheck "
+      branch="\e[32m$branchCheck\e[m "
     fi
 
-    printf "\e[32m$branch$status\e[m "
+    printf "$branch$status "
   fi
   return
 }
