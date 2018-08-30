@@ -1,6 +1,6 @@
 # Print a message in color. Inspired by:
 # https://bytefreaks.net/gnulinux/bash/cecho-a-function-to-print-using-different-colors-in-bash
-cprint () {
+cecho () {
   declare -A colors;
   colors=(\
     ['default']='\e[39m'\
@@ -12,6 +12,13 @@ cprint () {
     ['magenta']='\e[35m'\
     ['cyan']='\e[36m'\
     ['gray']='\e[37m'\
+    ['light-red']='\e[91m'\
+    ['light-green']='\e[92m'\
+    ['light-yellow']='\e[93m'\
+    ['light-blue']='\e[94m'\
+    ['light-magenta']='\e[95m'\
+    ['light-cyan']='\e[96m'\
+    ['light-gray']='\e[97m'\
   );
 
   local defaultMessage="";
@@ -21,8 +28,7 @@ cprint () {
   local color=${2:-$defaultColor};
   color=${colors[$color]};
 
-  printf "${color}${message}";
-  echo;
+  echo -en "\001${color}\002${message}\001\e[m\002";
   return;
 }
 
