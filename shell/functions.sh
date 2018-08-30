@@ -1,7 +1,7 @@
 # Print a message in color. Inspired by:
 # https://bytefreaks.net/gnulinux/bash/cecho-a-function-to-print-using-different-colors-in-bash
 cecho () {
-  declare -A colors;
+  declare -A colors
   colors=(\
     ['default']='\e[39m'\
     ['black']='\e[30m'\
@@ -21,15 +21,15 @@ cecho () {
     ['light-gray']='\e[97m'\
   );
 
-  local defaultMessage="";
-  local defaultColor="default";
+  local defaultMessage=""
+  local defaultColor="default"
 
-  local message=${1:-$defaultMessage};
-  local color=${2:-$defaultColor};
-  color=${colors[$color]};
+  local message=${1:-$defaultMessage}
+  local color=${2:-$defaultColor}
+  color=${colors[$color]}
 
-  echo -en "\001${color}\002${message}\001\e[m\002";
-  return;
+  echo -en "\001${color}\002${message}\001\e[m\002"
+  return
 }
 
 # Print text as a header
