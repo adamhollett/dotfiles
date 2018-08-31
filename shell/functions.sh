@@ -21,14 +21,14 @@ cecho () {
     ['light-gray']='\e[97m'\
   );
 
-  local defaultMessage=""
-  local defaultColor="default"
+  local defaultMessage
+  local defaultColor='default'
 
   local message=${1:-$defaultMessage}
   local color=${2:-$defaultColor}
   color=${colors[$color]}
 
-  echo -en "\001${color}\002${message}\001\e[m\002"
+  echo -en "\x01${color}\x02${message}\x01\e[m\x02"
   return
 }
 
