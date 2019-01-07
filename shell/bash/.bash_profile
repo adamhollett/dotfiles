@@ -7,6 +7,3 @@ source ~/dotfiles/shell/functions.sh
 source ~/dotfiles/shell/path.sh
 source ~/dotfiles/shell/aliases.sh
 source ~/dotfiles/shell/bash/prompt.bash
-
-# Add dev if it's present
-if [[ -f /opt/dev/dev.sh ]] && [[ $- == *i* ]]; then source /opt/dev/dev.sh; fi
