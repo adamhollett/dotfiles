@@ -5,6 +5,9 @@ AllCops:
 inherit_from:
   - https://shopify.github.io/ruby-style-guide/rubocop.yml
 
+Style/MethodCallWithArgsParentheses:
+  Enabled: false
+
 Style/FrozenStringLiteralComment:
   Exclude:
     - '*.gemspec'

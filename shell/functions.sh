@@ -21,7 +21,7 @@ cecho () {
     ['light-gray']='\e[97m'\
   );
 
-  local defaultMessage
+  local defaultMessage=''
   local defaultColor='default'
 
   local message=${1:-$defaultMessage}
@@ -36,10 +36,11 @@ cecho () {
 print_header () {
   local header=$1
   echo ''
-  echo '›'
-  echo "› $header"
-  echo '›'
+  echo '❯'
+  echo "❯ $header"
+  echo '❯'
   echo ''
+  sleep .5
 }
 
 # Given a file path, symlink the file to the home directory
@@ -52,4 +53,5 @@ symlink_to_home () {
     echo "Linking $(basename "$file")"
     ln -sf "$file" ~/$(basename "$file")
   fi
+  sleep .05
 }

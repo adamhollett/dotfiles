@@ -2,14 +2,16 @@
 
 source ~/dotfiles/shell/functions.sh
 
+source os/all.sh
+
 # Determine which OS we are in and follow the corresponding script
 case $OSTYPE in
   darwin*)
-    print_header 'operating system detected as macOS'
+    print_header 'setting up macOS'
     source os/macos.sh
     ;;
   msys*)
-    print_header 'operating system detected as Windows'
+    print_header 'setting up Windows'
     source os/windows.sh
     ;;
   *)
