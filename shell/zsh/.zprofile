@@ -6,6 +6,7 @@
 source ~/dotfiles/shell/functions.sh
 source ~/dotfiles/shell/path.sh
 source ~/dotfiles/shell/aliases.sh
+source ~/dotfiles/shell/zsh/functions.zsh
 source ~/dotfiles/shell/zsh/prompt.zsh
 
 autoload -Uz compinit promptinit
