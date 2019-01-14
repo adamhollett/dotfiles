@@ -31,3 +31,9 @@
   sp = stash pop
   ss = stash save
   ws = status --short
+
+[diff]
+	algorithm = patience
+
+[protocol]
+	version = 2
