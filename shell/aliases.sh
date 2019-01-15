@@ -60,6 +60,11 @@ alias   be='bundle exec'
 alias  ber='bundle exec rake'
 
 
+## Misc
+
+alias ls='ls -G'
+
+
 ## Fun
 
 alias hack='open http://hackertyper.net'
