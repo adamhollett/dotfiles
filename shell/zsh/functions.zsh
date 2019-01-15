@@ -1,27 +1,44 @@
 #!/usr/bin/env zsh
 
-# Get the current git branch
-git_branch () {
+# Return the branch name if we're in a git repo, or nothing otherwise.
+git_check () {
   local gitBranch=$(git branch 2> /dev/null | sed -e "/^[^*]/d" -e "s/* \(.*\)/\1/")
-  if [[ ! $gitBranch == '' ]]; then
-    if [[ $gitBranch == 'master' ]]; then
-      return $gitBranch
-    fi
-    echo -en "%F{white}⌥%f %F{green}$gitBranch%f"
-    return $gitBranch
+  if [[ $gitBranch == '' ]]; then
+    return
+  else
+    echo -en $gitBranch
+    return
   fi
-  return false
 }
 
+# Return "green" if there are no git changes, or "yellow" if there are.
 git_status () {
-  local gitBranch=$(git branch 2> /dev/null | sed -e "/^[^*]/d" -e "s/* \(.*\)/\1/")
+  local gitBranch="$(git_check)"
   if [[ ! $gitBranch == '' ]]; then
     local statusCheck=$(git status --porcelain 2> /dev/null)
     if [[ ! $statusCheck == '' ]]; then
-      echo -en "%F{yellow}○%f "
+      echo -en 'yellow'
     else
-      echo -en "%F{green}●%f "
+      echo -en 'green'
     fi
+  fi
+}
+
+# Format and print the current git branch if it isn't master.
+git_branch () {
+  local gitBranch="$(git_check)"
+  if [[ ! $gitBranch == '' && ! $gitBranch == 'master' ]]; then
+    echo -en "%F{white}⌥%f %F{"$(git_status)"}$gitBranch%f"
+  fi
+}
+
+# Print a dot indicating the current git status.
+git_dot () {
+  local gitStatusColor="$(git_status)"
+  if [[ $gitStatusColor == 'yellow' ]]; then
+    echo -en "%F{yellow}○%f "
+  elif [[ $gitStatusColor == 'green' ]]; then
+    echo -en "%F{green}●%f "
   fi
 }
 
