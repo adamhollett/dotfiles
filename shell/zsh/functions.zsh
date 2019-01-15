@@ -1,32 +1,28 @@
 #!/usr/bin/env zsh
 
-# Get git info for the current directory to be shown in the prompt
-git_info () {
-  local branch=''
-  local gitstatus=''
+# Get the current git branch
+git_branch () {
+  local gitBranch=$(git branch 2> /dev/null | sed -e "/^[^*]/d" -e "s/* \(.*\)/\1/")
+  if [[ ! $gitBranch == '' ]]; then
+    if [[ $gitBranch == 'master' ]]; then
+      return $gitBranch
+    fi
+    echo -en "%F{white}⌥%f %F{green}$gitBranch%f"
+    return $gitBranch
+  fi
+  return false
+}
 
-  # Determine if we're in a git repo
-  local branchCheck=$(git branch 2> /dev/null | sed -e "/^[^*]/d" -e "s/* \(.*\)/\1/")
-  if [[ ! $branchCheck == '' ]]; then
-
-    # Determine the state of the branch
+git_status () {
+  local gitBranch=$(git branch 2> /dev/null | sed -e "/^[^*]/d" -e "s/* \(.*\)/\1/")
+  if [[ ! $gitBranch == '' ]]; then
     local statusCheck=$(git status --porcelain 2> /dev/null)
     if [[ ! $statusCheck == '' ]]; then
-      gitstatus="%F{yellow}○%f"
+      echo -en "%F{yellow}○%f "
     else
-      gitstatus="%F{green}●%f"
+      echo -en "%F{green}●%f "
     fi
-
-    # Don't show the branch name if it's "master"
-    if [[ $branchCheck == 'master' ]]; then
-      branch=''
-    else
-      branch="%F{green}$branchCheck%f "
-    fi
-
-    echo -en "$branch$gitstatus "
   fi
-  return
 }
 
 # Get the current directory, truncate it, and make it blue
