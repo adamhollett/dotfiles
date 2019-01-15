@@ -3,10 +3,10 @@
 # Return the branch name if we're in a git repo, or nothing otherwise.
 git_check () {
   local gitBranch=$(git branch 2> /dev/null | sed -e "/^[^*]/d" -e "s/* \(.*\)/\1/")
-  if [[ $gitBranch == '' ]]; then
+  if [[ $gitBranch ]]; then
+    echo -en $gitBranch
     return
   else
-    echo -en $gitBranch
     return
   fi
 }
@@ -14,9 +14,9 @@ git_check () {
 # Return "green" if there are no git changes, or "yellow" if there are.
 git_status () {
   local gitBranch="$(git_check)"
-  if [[ ! $gitBranch == '' ]]; then
+  if [[ $gitBranch ]]; then
     local statusCheck=$(git status --porcelain 2> /dev/null)
-    if [[ ! $statusCheck == '' ]]; then
+    if [[ $statusCheck ]]; then
       echo -en 'yellow'
     else
       echo -en 'green'
@@ -27,7 +27,7 @@ git_status () {
 # Format and print the current git branch if it isn't master.
 git_branch () {
   local gitBranch="$(git_check)"
-  if [[ ! $gitBranch == '' && ! $gitBranch == 'master' ]]; then
+  if [[ $gitBranch && ! $gitBranch == 'master' ]]; then
     echo -en "%F{white}⌥%f %F{"$(git_status)"}$gitBranch%f"
   fi
 }
