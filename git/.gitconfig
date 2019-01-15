@@ -1,20 +1,20 @@
 [user]
-	name = Adam Hollett
-	email = mail@adamhollett.com
+  name = Adam Hollett
+  email = mail@adamhollett.com
 
 [core]
-	editor = nano
+  editor = nano
 
 [fetch]
-	prune = true
+  prune = true
 
 [rebase]
-	autoStash = true
+  autoStash = true
 
 [help]
   # If autocorrect comes up with only one suggestion, automatically run it after
   # a delay (in decaseconds)
-	autoCorrect = 20
+  autoCorrect = 20
 
 [alias]
   a  = add
@@ -33,7 +33,7 @@
   ws = status --short
 
 [diff]
-	algorithm = patience
+  algorithm = patience
 
 [protocol]
-	version = 2
+  version = 2
