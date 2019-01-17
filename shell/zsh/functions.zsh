@@ -6,39 +6,70 @@ git_check () {
   if [[ $gitBranch ]]; then
     echo -en $gitBranch
     return
-  else
-    return
   fi
 }
 
-# Return "green" if there are no git changes, or "yellow" if there are.
+# Return a color indicating the status of the current git repo.
 git_status () {
   local gitBranch="$(git_check)"
   if [[ $gitBranch ]]; then
-    local statusCheck=$(git status --porcelain 2> /dev/null)
-    if [[ $statusCheck ]]; then
-      echo -en 'yellow'
-    else
-      echo -en 'green'
+    local statusCheck=$(git status 2> /dev/null)
+    if [[ $statusCheck =~ 'working tree clean' ]]; then
+      echo -en 'clean'
+    elif [[ $statusCheck =~ 'no changes added' ]]; then
+      echo -en 'modified'
+    elif [[ $statusCheck =~ 'Changes to be committed' ]]; then
+      echo -en 'staged'
+    elif [[ $statusCheck =~ 'Your branch is ahead' ]]; then
+      echo -en 'ahead'
     fi
   fi
 }
 
-# Format and print the current git branch if it isn't master.
+# Return a color based on the current git status.
+git_status_color () {
+  local gitStatus="$(git_status)"
+  local statusText=''
+  case $gitStatus in
+    clean*)
+      statusText='green'
+      ;;
+    modified*)
+      statusText=214
+      ;;
+    staged*)
+      statusText=226
+      ;;
+    ahead*)
+      statusText=159
+      ;;
+    *)
+      statusText='white'
+      ;;
+  esac
+  echo -en $statusText
+}
+
+# Print a label for the current git branch if it isn't master.
 git_branch () {
   local gitBranch="$(git_check)"
   if [[ $gitBranch && ! $gitBranch == 'master' ]]; then
-    echo -en "%F{white}⌥%f %F{"$(git_status)"}$gitBranch%f"
+    echo -en "%F{240}⌥%f %F{"$(git_status_color)"}$gitBranch%f"
   fi
 }
 
 # Print a dot indicating the current git status.
 git_dot () {
-  local gitStatusColor="$(git_status)"
-  if [[ $gitStatusColor == 'yellow' ]]; then
-    echo -en "%F{yellow}○%f "
-  elif [[ $gitStatusColor == 'green' ]]; then
-    echo -en "%F{green}●%f "
+  local gitCheck="$(git_check)"
+  if [[ $gitCheck ]]; then
+    local gitStatus="$(git_status)"
+    local gitStatusDot='●'
+    if [[ $gitStatus == 'staged' ]]; then
+      local gitStatusDot='◍'
+    elif [[ $gitStatus == 'modified' ]]; then
+      local gitStatusDot='○'
+    fi
+    echo -en "%F{"$(git_status_color)"}$gitStatusDot%f "
   fi
 }
 
