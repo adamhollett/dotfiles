@@ -1,7 +1,3 @@
-[user]
-  name = Adam Hollett
-  email = mail@adamhollett.com
-
 [core]
   editor = nano
 
@@ -16,21 +12,9 @@
   # a delay (in decaseconds)
   autoCorrect = 20
 
-[alias]
-  a  = add
-  aa = add -A
-  b  = branch
-  bc = checkout -b
-  bd = branch --delete
-  bD = branch --delete --force
-  cm = commit --message
-  co = checkout
-  fm = pull
-  p  = push
-  sl = stash list
-  sp = stash pop
-  ss = stash save
-  ws = status --short
+[include]
+  path = ~/dotfiles/git/shopify
+  path = ~/dotfiles/git/aliases
 
 [diff]
   algorithm = patience

@@ -1,11 +1,7 @@
 # dotfiles
 
-Fork this repo and clone it to your home directory so that you get `~/dotfiles`.
+Fork this repo and clone it in your home directory so that you get `~/dotfiles`.
 
-Don't forget to:
-- edit `git/.gitconfig` to replace my name and email with yours
-- Remove the dev bit in `shell/path.sh`
+Run `setup.sh` to set everything up.
 
-Run `sh setup.sh` to set everything up.
-
-**Note**: On Windows, you'll need to run the script using [Git Bash for Windows](https://git-for-windows.github.io).
+**Note**: On Windows, you must run the setup script using [Git Bash for Windows](https://git-for-windows.github.io).
