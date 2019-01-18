@@ -14,14 +14,14 @@ git_status () {
   local gitBranch="$(git_check)"
   if [[ $gitBranch ]]; then
     local statusCheck=$(git status 2> /dev/null)
-    if [[ $statusCheck =~ 'working tree clean' ]]; then
-      echo -en 'clean'
-    elif [[ $statusCheck =~ 'no changes added' ]]; then
-      echo -en 'modified'
+    if [[ $statusCheck =~ 'Your branch is ahead' ]]; then
+      echo -en 'ahead'
     elif [[ $statusCheck =~ 'Changes to be committed' ]]; then
       echo -en 'staged'
-    elif [[ $statusCheck =~ 'Your branch is ahead' ]]; then
-      echo -en 'ahead'
+    elif [[ $statusCheck =~ 'no changes added' ]]; then
+      echo -en 'modified'
+    elif [[ $statusCheck =~ 'working tree clean' ]]; then
+      echo -en 'clean'
     fi
   fi
 }
