@@ -1,7 +1,3 @@
-## brew
-
-alias cask='brew cask'
-
 ## git
 
 ### working copy (status)
@@ -47,6 +43,11 @@ alias   gs='git stash'
 alias  gss='git stash save'
 alias  gsl='git stash list'
 alias  gsp='git stash pop'
+
+
+## brew
+
+alias cask='brew cask'
 
 
 ## Node.js
