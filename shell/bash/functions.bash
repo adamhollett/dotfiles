@@ -24,7 +24,7 @@ git_info () {
       branch=$(cecho "$branchCheck " green)
     fi
 
-    echo -en "$branch$status "
+    echo -en "$status $branch"
   fi
   return
 }
