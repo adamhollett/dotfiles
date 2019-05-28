@@ -39,8 +39,8 @@ alias  gpc='git push --set-upstream origin `git rev-parse --abbrev-ref HEAD`'
 
 ### stash
 
-alias   gs='git stash'
-alias  gss='git stash save'
+alias   gs='git stash -u'
+alias  gss='git stash save -u'
 alias  gsl='git stash list'
 alias  gsp='git stash pop'
 
