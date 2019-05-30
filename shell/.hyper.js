@@ -12,7 +12,7 @@ module.exports = {
     fontSize: 18,
 
     // font family with optional fallbacks
-    fontFamily: 'Hack, Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
+    fontFamily: 'Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
 
     // default font weight: 'normal' or 'bold'
     fontWeight: 'normal',
@@ -21,7 +21,7 @@ module.exports = {
     fontWeightBold: 'bold',
 
     // line height as a relative unit
-    lineHeight: 1.2,
+    lineHeight: 1.1,
 
     // letter spacing as a relative unit
     letterSpacing: 0,
@@ -46,7 +46,7 @@ module.exports = {
     backgroundColor: 'rgb(055, 055, 060)',
 
     // terminal opacity
-    opacity: 0.96,
+    opacity: 0.95,
 
     // terminal selection color
     selectionColor: 'rgba(248,28,229,0.3)',
@@ -70,7 +70,7 @@ module.exports = {
     showWindowControls: '',
 
     // custom padding (CSS format, i.e.: `top right bottom left`)
-    padding: '15px',
+    padding: '1.3em',
 
     // the full list. if you're going to provide the full color palette,
     // including the 6 x 6 color cubes and the grayscale map, just provide
@@ -106,7 +106,7 @@ module.exports = {
     //
     // PowerShell on Windows
     // - Example: `C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe`
-    shell: '/usr/local/bin/zsh',
+    shell: 'zsh',
 
     // for setting shell arguments (i.e. for using interactive shellArgs: `['-i']`)
     // by default `['--login']` will be used
