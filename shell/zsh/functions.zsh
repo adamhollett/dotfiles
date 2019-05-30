@@ -75,6 +75,6 @@ git_dot () {
 
 # Get the current directory, truncate it, and make it blue
 fancy_dir () {
-  echo -en "%F{blue}%-60<…<%~%<<%f"
+  echo -en "%F{blue}%-66<…<%~%<<%f"
   return
 }
