@@ -20,6 +20,8 @@ git_info () {
     # Don't show the branch name if it's "master"
     if [[ $branchCheck == 'master' ]]; then
       branch=''
+    elif [[ $COLUMNS -lt 100 ]]; then
+      branch=$(cecho '⌥ ' gray)
     else
       branch=$(cecho "$branchCheck " green)
     fi
