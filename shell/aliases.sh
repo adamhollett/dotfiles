@@ -2,7 +2,7 @@
 
 ### working copy (status)
 
-alias  gws='git status --short'
+alias  gws='git status'
 alias  gwC='git clean -fd'
 alias  gwr='git reset --soft'
 alias  gwR='git reset --hard'
