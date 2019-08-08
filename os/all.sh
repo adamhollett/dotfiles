@@ -18,6 +18,11 @@ symlink_to_home ~/dotfiles/shell/.inputrc
 symlink_to_home ~/dotfiles/shell/bash/.bash_profile
 symlink_to_home ~/dotfiles/shell/bash/.bashrc
 
+#### zsh
+
+symlink_to_home ~/dotfiles/shell/zsh/.zprofile
+symlink_to_home ~/dotfiles/shell/zsh/.zshrc
+
 ### ruby
 
 symlink_to_home ~/dotfiles/ruby/.ruby-version
