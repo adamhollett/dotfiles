@@ -9,3 +9,5 @@ source ~/dotfiles/shell/aliases.sh
 source ~/dotfiles/shell/nvm.sh
 source ~/dotfiles/shell/bash/functions.bash
 source ~/dotfiles/shell/bash/prompt.bash
+
+cd ~
