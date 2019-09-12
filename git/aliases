@@ -1,15 +1,2 @@
 [alias]
-  a  = add
-  aa = add -A
-  b  = branch
-  bc = checkout -b
-  bd = branch --delete
-  bD = branch --delete --force
-  cm = commit --message
-  co = checkout
-  fm = pull
-  p  = push
-  sl = stash list
-  sp = stash pop
-  ss = stash save
-  ws = status --short
+  start = !git checkout master && git pull && git clean -fd

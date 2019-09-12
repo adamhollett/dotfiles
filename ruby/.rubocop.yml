@@ -5,11 +5,8 @@ AllCops:
 inherit_from:
   - https://shopify.github.io/ruby-style-guide/rubocop.yml
 
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+
 Style/MethodCallWithArgsParentheses:
   Enabled: false
-
-Style/FrozenStringLiteralComment:
-  Exclude:
-    - '*.gemspec'
-    - 'Gemfile'
-    - 'Rakefile'
