@@ -1,5 +1,10 @@
+[user]
+	name = Adam Hollett
+	email = mail@adamhollett.com
+
 [core]
   editor = nano
+	autocrlf = input
 
 [fetch]
   prune = true
@@ -13,11 +18,13 @@
   autoCorrect = 20
 
 [include]
-  path = ~/dotfiles/git/shopify
   path = ~/dotfiles/git/aliases
+
+[includeIf "gitdir/i:**/shopify/**"]
+  path = ~/dotfiles/git/shopify
 
 [diff]
   algorithm = patience
 
 [protocol]
-  version = 2
+  version = 1
