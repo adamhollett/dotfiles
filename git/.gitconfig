@@ -1,3 +1,7 @@
+[user]
+  name = Adam Hollett
+  email = mail@adamhollett.com
+
 [core]
   editor = nano
 
@@ -18,6 +22,3 @@
 
 [diff]
   algorithm = patience
-
-[protocol]
-  version = 2
