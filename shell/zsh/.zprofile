@@ -3,10 +3,7 @@
 # .zprofile is the user-specific initialization file for zsh, and is read
 # by both login and interactive shells, unlike .zshrc.
 
-source ~/dotfiles/shell/functions.sh
-source ~/dotfiles/shell/path.sh
-source ~/dotfiles/shell/aliases.sh
-source ~/dotfiles/shell/nvm.sh
+source ~/dotfiles/shell/common.sh
 source ~/dotfiles/shell/zsh/functions.zsh
 source ~/dotfiles/shell/zsh/prompt.zsh
 
