@@ -6,5 +6,3 @@
 source ~/dotfiles/shell/common.sh
 source ~/dotfiles/shell/bash/functions.bash
 source ~/dotfiles/shell/bash/prompt.bash
-
-cd ~
