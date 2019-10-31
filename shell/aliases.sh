@@ -9,7 +9,7 @@ alias  gwR='git reset --hard'
 
 ### branch
 
-alias   gb='git branch'
+alias   gb='git branch --sort=-committerdate'
 alias  gbc='git checkout -b'
 alias  gbd='git branch --delete'
 alias  gbD='git branch --delete --force'
