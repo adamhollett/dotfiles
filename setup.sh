@@ -1,20 +1,16 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
-source ~/dotfiles/shell/functions.sh
+set -o errexit
+set -o pipefail
 
-source os/all.sh
+readonly DIR="$(dirname "$0")"
+
+source "${DIR}/shell/functions.sh"
+source "${DIR}/os/all.sh"
 
 # Determine which OS we are in and follow the corresponding script
 case $OSTYPE in
-  darwin*)
-    print_header 'setting up macOS'
-    source os/macos.sh
-    ;;
-  msys*)
-    print_header 'setting up Windows'
-    source os/windows.sh
-    ;;
-  *)
-    exit
-    ;;
+  darwin*) source "${DIR}/os/macos.sh";;
+  msys*)   source "${DIR}/os/windows.sh";;
+  *)       exit;;
 esac

@@ -1,8 +1,8 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 ## Symlinks
 
-print_header 'create symlinks'
+print_header "creating symlinks"
 
 ### git
 
