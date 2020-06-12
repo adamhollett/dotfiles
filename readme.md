@@ -1,6 +1,6 @@
 # dotfiles
 
-Fork this repo and clone it in your home directory so that you get `~/dotfiles`.
+Fork this repo and clone it in your home directory so that you get `~/dotfiles`. The included `.gitconfig` includes my name and email, so you'll want to change those to your own.
 
 Run `setup.sh` to set everything up.
 

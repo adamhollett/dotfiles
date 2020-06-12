@@ -20,6 +20,7 @@
 [include]
   path = ~/dotfiles/git/aliases
 
+# Include Shopify git config if the path include "shopify"
 [includeIf "gitdir/i:**/shopify/**"]
   path = ~/dotfiles/git/shopify
 

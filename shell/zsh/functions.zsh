@@ -38,7 +38,7 @@ git_check () {
   fi
 }
 
-# Return a color indicating the status of the current git repo.
+# Return the status of the current git repo.
 git_status () {
   local gitBranch="$(git_check)"
   if [[ $gitBranch ]]; then
