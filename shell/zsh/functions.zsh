@@ -61,16 +61,16 @@ git_status_color () {
   local statusText=''
   case $gitStatus in
     clean*)
-      statusText="#81C784"
+      statusText="green"
       ;;
     modified*)
-      statusText="#FFB74D"
+      statusText="magenta"
       ;;
     staged*)
-      statusText="#FFF176"
+      statusText="yellow"
       ;;
     ahead*)
-      statusText="#4FC3F7"
+      statusText="cyan"
       ;;
     *)
       statusText="white"
@@ -83,7 +83,7 @@ git_status_color () {
 git_branch () {
   local gitBranch="$(git_check)"
   if [[ $gitBranch && ! $gitBranch == 'master' && $COLUMNS -gt 100 ]]; then
-    echo -en "%F{240}⌥%f %F{"$(git_status_color)"}$gitBranch%f"
+    echo -en "%F{#616161}⌥%f %F{"$(git_status_color)"}$gitBranch%f"
   fi
 }
 
@@ -99,7 +99,7 @@ git_dot () {
       local gitStatusDot='○'
     fi
     if [[ $gitCheck && ! $gitCheck == 'master' && $COLUMNS -lt 100 ]]; then
-      echo -en "%F{240}⌥%f "
+      echo -en "%F{#616161}⌥%f "
     fi
     echo -en "%F{"$(git_status_color)"}$gitStatusDot%f "
   fi
@@ -107,6 +107,6 @@ git_dot () {
 
 # Get the current directory, truncate it, and make it blue
 fancy_dir () {
-  echo -en "%F{#81D4FA}%-66<…<%~%<<%f"
+  echo -en "%F{cyan}%-66<…<%~%<<%f"
   return
 }
