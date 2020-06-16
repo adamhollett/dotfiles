@@ -61,19 +61,19 @@ git_status_color () {
   local statusText=''
   case $gitStatus in
     clean*)
-      statusText='green'
+      statusText="#81C784"
       ;;
     modified*)
-      statusText=214
+      statusText="#FFB74D"
       ;;
     staged*)
-      statusText=226
+      statusText="#FFF176"
       ;;
     ahead*)
-      statusText=159
+      statusText="#4FC3F7"
       ;;
     *)
-      statusText='white'
+      statusText="white"
       ;;
   esac
   echo -en $statusText
@@ -107,6 +107,6 @@ git_dot () {
 
 # Get the current directory, truncate it, and make it blue
 fancy_dir () {
-  echo -en "%F{blue}%-66<…<%~%<<%f"
+  echo -en "%F{#81D4FA}%-66<…<%~%<<%f"
   return
 }
