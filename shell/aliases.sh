@@ -49,11 +49,6 @@ alias  gsl='git stash list'
 alias  gsp='git stash pop'
 
 
-## brew
-
-alias cask='brew cask'
-
-
 ## Node.js
 
 alias   nr='npm run'
@@ -62,7 +57,6 @@ alias   nr='npm run'
 ## Ruby
 
 alias   be='bundle exec'
-alias  ber='bundle exec rake'
 
 
 ## Misc
