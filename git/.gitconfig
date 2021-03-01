@@ -9,8 +9,17 @@
 [fetch]
   prune = true
 
+[pull]
+	rebase = false
+
 [rebase]
   autoStash = true
+
+[gc]
+	writeCommitGraph = true
+
+[protocol]
+	version = 2
 
 [help]
   # If autocorrect comes up with only one suggestion, automatically run it after
