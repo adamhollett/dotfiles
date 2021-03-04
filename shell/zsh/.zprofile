@@ -8,7 +8,7 @@ source ~/dotfiles/shell/zsh/functions.zsh
 source ~/dotfiles/shell/zsh/prompt.zsh
 
 autoload -Uz compinit promptinit
-compinit
+compinit -i
 promptinit
 
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'

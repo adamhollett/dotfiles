@@ -5,6 +5,7 @@
 [core]
   editor = nano
 	autocrlf = input
+	commitGraph = true
 
 [fetch]
   prune = true
