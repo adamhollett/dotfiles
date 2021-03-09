@@ -82,7 +82,7 @@ git_status_color () {
 # Print a label for the current git branch if it isn't master.
 git_branch () {
   local gitBranch="$(git_check)"
-  if [[ $gitBranch && ! $gitBranch == 'master' && $COLUMNS -gt 100 ]]; then
+  if [[ $gitBranch && ! $gitBranch == 'master' && $COLUMNS -gt 79 ]]; then
     echo -en "%F{#616161}⌥%f %F{"$(git_status_color)"}$gitBranch%f"
   fi
 }
