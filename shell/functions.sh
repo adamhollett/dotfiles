@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 
+# Source a file only if it exists.
+# Use for files that might not be on all machines (work-specific).
+safe_source () {
+  if [ -f $1 ]; then source $1; fi
+}
+
 # Print a message in color.
 # https://bytefreaks.net/gnulinux/bash/cecho-a-function-to-print-using-different-colors-in-bash
 cecho () {
