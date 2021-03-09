@@ -29,8 +29,9 @@
 
 [include]
   path = ~/dotfiles/git/aliases
+  path = ~/dotfiles/git/dev
 
-# Include Shopify git config if the path include "shopify"
+# Set Shopify email if the path include "shopify"
 [includeIf "gitdir/i:**/shopify/**"]
   path = ~/dotfiles/git/shopify
 
