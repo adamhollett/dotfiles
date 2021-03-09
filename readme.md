@@ -2,7 +2,15 @@
 
 ![](https://i.imgur.com/ZGe7plS.png)
 
-Fork this repo and clone it in your home directory so that you get `~/dotfiles`. The included `.gitconfig` includes my name and email, so you'll want to change those to your own.
+Fork this repo and clone it in your home directory so that you get `~/dotfiles`.
+
+You can add your git identity to `git/.gitconfig`, or place this in a file at `git/id` and it will be included:
+
+```
+[user]
+  name = Your Name
+  email = your@email.com
+```
 
 To set everything up:
 

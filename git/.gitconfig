@@ -1,39 +1,21 @@
-[user]
-  name = Adam Hollett
-  email = mail@adamhollett.com
-
 [core]
   editor = nano
-	autocrlf = input
-	commitGraph = true
+  autocrlf = input
 
 [fetch]
   prune = true
 
 [pull]
-	rebase = false
+  rebase = false
 
 [rebase]
   autoStash = true
 
-[gc]
-	writeCommitGraph = true
-
-[protocol]
-	version = 2
-
-[help]
-  # If autocorrect comes up with only one suggestion, automatically run it after
-  # a delay (in decaseconds)
-  autoCorrect = 20
-
 [include]
+  path = ~/dotfiles/git/id
   path = ~/dotfiles/git/aliases
   path = ~/dotfiles/git/dev
 
-# Set Shopify email if the path include "shopify"
+# Change identity if path includes "shopify"
 [includeIf "gitdir/i:**/shopify/**"]
-  path = ~/dotfiles/git/shopify
-
-[diff]
-  algorithm = patience
+  path = ~/dotfiles/git/id-shopify
