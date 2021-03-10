@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 print_header "setting up Windows"
 echo "Nothing to do."

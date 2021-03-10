@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/bin/zsh
 
 # Show colorful chevrons according to what month it is.
 seasonal_chevrons () {

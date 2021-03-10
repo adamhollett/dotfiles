@@ -1,3 +1,5 @@
+#!/bin/bash
+
 ## git
 
 ### working copy (status)

@@ -1,3 +1,5 @@
+#!/bin/bash
+
 ## nvm
 
 if [[ $(which nvm) ]]; then

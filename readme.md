@@ -15,7 +15,7 @@ You can add your git identity to `git/.gitconfig`, or place this in a file at `g
 To set everything up:
 
 ``` shell
-sh setup.sh
+bash setup.sh
 ```
 
-**Note**: On Windows, you must run the setup script using [Git Bash for Windows](https://git-for-windows.github.io) or the [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10) (WSL).
+**Note**: On Windows, you must run the setup script using the [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10) (WSL) or [Git Bash for Windows](https://git-for-windows.github.io).
