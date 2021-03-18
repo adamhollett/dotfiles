@@ -2,6 +2,9 @@
   editor = nano
   autocrlf = input
 
+[branch]
+  sort = -committerdate
+
 [fetch]
   prune = true
 
