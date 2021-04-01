@@ -8,19 +8,19 @@ seasonal_chevrons () {
   case $date in
     # spring
     *Mar*|*Apr*|*May*)
-      chevrons="%F{#81D4FA}❯%F{#A5D6A7}❯%F{#FFF59D}❯%f"
+      chevrons="%F{cyan}❯%F{green}❯%F{yellow}❯%f"
       ;;
     # summer
     *Jun*|*Jul*|*Aug*)
-      chevrons="%F{#A5D6A7}❯%F{#FFF59D}❯%F{#FFAB91}❯%f"
+      chevrons="%F{green}❯%F{yellow}❯%F{red}❯%f"
       ;;
     # fall
     *Sep*|*Oct*|*Nov*)
-      chevrons="%F{#E6EE9C}❯%F{#FFCC80}❯%F{#F48FB1}❯%f"
+      chevrons="%F{yellow}❯%F{red}❯%F{magenta}❯%f"
       ;;
     # winter
     *Dec*|*Jan*|*Feb*)
-      chevrons="%F{#B39DDB}❯%F{#81D4FA}❯%F{#A5D6A7}❯%f"
+      chevrons="%F{magenta}❯%F{cyan}❯%F{green}❯%f"
       ;;
     *)
       ;;
