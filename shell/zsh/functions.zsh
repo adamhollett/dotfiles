@@ -98,7 +98,7 @@ git_dot () {
     elif [[ $gitStatus == 'modified' ]]; then
       local gitStatusDot='○'
     fi
-    if [[ $gitCheck && ! $gitCheck == 'master' && $COLUMNS -lt 100 ]]; then
+    if [[ $gitCheck && ! $gitCheck == 'master' && $COLUMNS -lt 80 ]]; then
       echo -en "%F{#616161}⌥%f "
     fi
     echo -en "%F{"$(git_status_color)"}$gitStatusDot%f "
