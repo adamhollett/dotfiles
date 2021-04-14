@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #
 # An enhanced, colourful bash prompt featuring git branch and status info.
 

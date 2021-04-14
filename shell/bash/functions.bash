@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Get git info for the current directory to be shown in the prompt
 git_info () {
