@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/false
 
 source ~/dotfiles/shell/functions.sh
 source ~/dotfiles/shell/aliases.sh

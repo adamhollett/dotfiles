@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/bin/false
 
 # Return the branch name if we're in a git repo, or nothing otherwise.
 git_check () {

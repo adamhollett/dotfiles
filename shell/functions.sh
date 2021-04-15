@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/false
 
 # Source a file only if it exists.
 # Use for files that might not be on all machines (work-specific).
