@@ -1,34 +1,5 @@
 #!/usr/bin/env zsh
 
-# Show colorful chevrons according to what month it is.
-seasonal_chevrons () {
-  local date=$(date)
-  local chevrons="❯❯❯"
-
-  case $date in
-    # spring
-    *Mar*|*Apr*|*May*)
-      chevrons="%F{cyan}❯%F{green}❯%F{yellow}❯%f"
-      ;;
-    # summer
-    *Jun*|*Jul*|*Aug*)
-      chevrons="%F{green}❯%F{yellow}❯%F{red}❯%f"
-      ;;
-    # fall
-    *Sep*|*Oct*|*Nov*)
-      chevrons="%F{yellow}❯%F{red}❯%F{magenta}❯%f"
-      ;;
-    # winter
-    *Dec*|*Jan*|*Feb*)
-      chevrons="%F{magenta}❯%F{cyan}❯%F{green}❯%f"
-      ;;
-    *)
-      ;;
-  esac
-
-  echo -en $chevrons
-}
-
 # Return the branch name if we're in a git repo, or nothing otherwise.
 git_check () {
   local gitBranch=$(git branch 2> /dev/null | sed -e "/^[^*]/d" -e "s/* \(.*\)/\1/")
