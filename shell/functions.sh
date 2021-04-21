@@ -61,32 +61,3 @@ symlink_to_home () {
     ln -sf "$file" "$HOME/$(basename "$file")"
   fi
 }
-
-# Show colorful chevrons according to what month it is.
-seasonal_chevrons () {
-  local date=$(date)
-  local chevrons="❯❯❯"
-
-  case $date in
-    # spring
-    *Mar*|*Apr*|*May*)
-      chevrons="\e[36m❯\e[32m❯\e[33m❯\e[m"
-      ;;
-    # summer
-    *Jun*|*Jul*|*Aug*)
-      chevrons="\e[32m❯\e[33m❯\e[31m❯\e[m"
-      ;;
-    # fall
-    *Sep*|*Oct*|*Nov*)
-      chevrons="\e[33m❯\e[31m❯\e[35m❯\e[m"
-      ;;
-    # winter
-    *Dec*|*Jan*|*Feb*)
-      chevrons="\e[35m❯\e[34m❯\e[36m❯\e[m"
-      ;;
-    *)
-      ;;
-  esac
-
-  echo -en $chevrons
-}

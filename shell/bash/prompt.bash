@@ -5,4 +5,8 @@
 # A shortened path to the current directory
 PROMPT_DIRTRIM=2
 
-export PS1="$(cecho '\w' cyan) \`git_info\`$(seasonal_chevrons) "
+chevrons () {
+  echo "$(cecho ❯ light-blue)$(cecho ❯ light-green)$(cecho ❯ light-yellow)"
+}
+
+export PS1="$(cecho '\w' cyan) \`git_info\`$(chevrons) "
