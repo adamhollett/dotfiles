@@ -70,19 +70,19 @@ seasonal_chevrons () {
   case $date in
     # spring
     *Mar*|*Apr*|*May*)
-      chevrons="$(cecho ❯ cyan)$(cecho ❯ green)$(cecho ❯ yellow)"
+      chevrons="\e[36m❯\e[32m❯\e[33m❯\e[m"
       ;;
     # summer
     *Jun*|*Jul*|*Aug*)
-      chevrons="$(cecho ❯ green)$(cecho ❯ yellow)$(cecho ❯ light-red)"
+      chevrons="\e[32m❯\e[33m❯\e[31m❯\e[m"
       ;;
     # fall
     *Sep*|*Oct*|*Nov*)
-      chevrons="$(cecho ❯ light-yellow)$(cecho ❯ light-red)$(cecho ❯ light-magenta)"
+      chevrons="\e[33m❯\e[31m❯\e[35m❯\e[m"
       ;;
     # winter
     *Dec*|*Jan*|*Feb*)
-      chevrons="$(cecho ❯ light-magenta)$(cecho ❯ cyan)$(cecho ❯ light-green)"
+      chevrons="\e[35m❯\e[34m❯\e[36m❯\e[m"
       ;;
     *)
       ;;
