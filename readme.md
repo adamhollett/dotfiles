@@ -1,6 +1,6 @@
 # dotfiles
 
-![](https://i.imgur.com/ZGe7plS.png)
+![](https://i.imgur.com/uLgp0Iq.gif)
 
 Fork this repo and clone it in your home directory so that you get `~/dotfiles`.
 
