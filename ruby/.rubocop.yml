@@ -1,12 +1,12 @@
+# Use Shopify Ruby style
+inherit_gem:
+  rubocop-shopify: rubocop.yml
+
 AllCops:
   TargetRubyVersion: 2.7
   Exclude:
     - "node_modules/**/*"
     - "vendor/**/*"
-
-# Use Shopify Ruby style
-inherit_from:
-  - https://shopify.github.io/ruby-style-guide/rubocop.yml
 
 Style/StringLiterals:
   EnforcedStyle: double_quotes
