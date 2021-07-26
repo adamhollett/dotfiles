@@ -13,3 +13,6 @@ Style/StringLiterals:
 
 Style/MethodCallWithArgsParentheses:
   Enabled: false
+
+Layout/EmptyLineAfterMagicComment:
+  Enabled: true
