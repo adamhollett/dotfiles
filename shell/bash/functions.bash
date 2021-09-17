@@ -17,8 +17,8 @@ git_info () {
       status=$(cecho ● green)
     fi
 
-    # Don't show the branch name if it's "master"
-    if [[ $branchCheck == 'master' ]]; then
+    # Don't show the branch name if it's "main" or "master"
+    if [[ $branchCheck =~ (main|master) ]]; then
       branch=''
     elif [[ $COLUMNS -lt 100 ]]; then
       branch=$(cecho '⌥ ' gray)

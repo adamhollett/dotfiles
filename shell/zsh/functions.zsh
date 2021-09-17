@@ -79,10 +79,10 @@ git_status_color () {
   echo -en $statusText
 }
 
-# Print a label for the current git branch if it isn't master.
+# Print a label for the current git branch if it isn't main or master.
 git_branch () {
   local gitBranch="$(git_check)"
-  if [[ $gitBranch && ! $gitBranch == 'master' && $COLUMNS -gt 79 ]]; then
+  if [[ $gitBranch && ! $gitBranch =~ (main|master) && $COLUMNS -gt 79 ]]; then
     echo -en "%F{#616161}⌥%f %F{"$(git_status_color)"}$gitBranch%f"
   fi
 }
@@ -98,7 +98,7 @@ git_dot () {
     elif [[ $gitStatus == 'modified' ]]; then
       local gitStatusDot='○'
     fi
-    if [[ $gitCheck && ! $gitCheck == 'master' && $COLUMNS -lt 80 ]]; then
+    if [[ $gitCheck && ! $gitCheck =~ (main|master) && $COLUMNS -lt 80 ]]; then
       echo -en "%F{#616161}⌥%f "
     fi
     echo -en "%F{"$(git_status_color)"}$gitStatusDot%f "
