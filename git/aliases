@@ -1,2 +1,3 @@
 [alias]
-  start = !git checkout master && git pull && git clean -fd
+  default-branch = !git symbolic-ref refs/remotes/origin/HEAD | cut -f4 -d/
+  start          = !git checkout $(git default-branch) && git pull && git clean -fd
