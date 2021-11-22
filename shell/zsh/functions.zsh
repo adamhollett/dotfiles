@@ -45,10 +45,12 @@ git_status () {
     local statusCheck=$(git status 2> /dev/null)
     if [[ $statusCheck =~ 'Your branch is ahead' ]]; then
       echo -en 'ahead'
-    elif [[ $statusCheck =~ 'Changes to be committed' ]]; then
-      echo -en 'staged'
+    elif [[ $statusCheck =~ 'untracked files present' ]]; then
+      echo -en 'untracked'
     elif [[ $statusCheck =~ 'no changes added' ]]; then
       echo -en 'modified'
+    elif [[ $statusCheck =~ 'Changes to be committed' ]]; then
+      echo -en 'staged'
     elif [[ $statusCheck =~ 'working tree clean' ]]; then
       echo -en 'clean'
     fi
@@ -63,8 +65,11 @@ git_status_color () {
     clean*)
       statusText="green"
       ;;
+    untracked*)
+      statusText="red"
+      ;;
     modified*)
-      statusText="magenta"
+      statusText="red"
       ;;
     staged*)
       statusText="yellow"
@@ -83,7 +88,7 @@ git_status_color () {
 git_branch () {
   local gitBranch="$(git_check)"
   if [[ $gitBranch && ! $gitBranch =~ (main|master) && $COLUMNS -gt 79 ]]; then
-    echo -en "%F{#616161}⌥%f %F{"$(git_status_color)"}$gitBranch%f"
+    echo -en "%F{242}⌥ %F{252}$gitBranch%f"
   fi
 }
 
@@ -99,7 +104,7 @@ git_dot () {
       local gitStatusDot='○'
     fi
     if [[ $gitCheck && ! $gitCheck =~ (main|master) && $COLUMNS -lt 80 ]]; then
-      echo -en "%F{#616161}⌥%f "
+      echo -en "%F{242}⌥%f "
     fi
     echo -en "%F{"$(git_status_color)"}$gitStatusDot%f "
   fi
