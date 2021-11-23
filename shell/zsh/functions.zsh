@@ -88,7 +88,7 @@ git_status_color () {
 git_branch () {
   local gitBranch="$(git_check)"
   if [[ $gitBranch && ! $gitBranch =~ (main|master) && $COLUMNS -gt 79 ]]; then
-    echo -en "%F{242}⌥ %F{252}$gitBranch%f"
+    echo -en "%F{242}⌥ %F{247}$gitBranch%f"
   fi
 }
 
@@ -112,6 +112,6 @@ git_dot () {
 
 # Get the current directory, truncate it, and make it blue
 fancy_dir () {
-  echo -en "%F{cyan}%-55<…<%~%<<%f"
+  echo -en "%F{cyan}%(5~|%-1~/…/%2~|%4~)%f"
   return
 }
