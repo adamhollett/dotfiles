@@ -36,28 +36,3 @@ cecho () {
 
   echo -e "\x01${color}\x02${message}\x01\e[m\x02"
 }
-
-# Print text as a header
-print_header () {
-  declare header=${1:-""}
-
-  echo
-  echo "┃"
-  echo "┃ $header"
-  echo "┃"
-  echo
-
-  sleep .33
-}
-
-# Given a file path, symlink the file to the home directory
-symlink_to_home () {
-  declare file=$1
-
-  # Only take action if the input file exists
-  if [[ -f $file ]]; then
-    # Symlink the file to the home directory
-    echo "Linking $(basename "$file")"
-    ln -sf "$file" "$HOME/$(basename "$file")"
-  fi
-}

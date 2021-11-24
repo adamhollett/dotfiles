@@ -3,17 +3,19 @@
 set -eou pipefail
 
 setup () {
-  readonly DIR="$(dirname "$0")"
+  SELF_PATH="$( cd "$( dirname "$0" )" && pwd )"
 
-  . "${DIR}/shell/functions.sh"
-  . "${DIR}/os/all.sh"
+  for file in $(find "$SELF_PATH" -name \*.sym\*); do
+    source_file=$(basename "$file")
+    destination_file=$(echo "$HOME/$source_file" | sed "s/\.sym//g")
 
-  # Determine which OS we are in and follow the corresponding script
-  case $OSTYPE in
-    darwin*) . "${DIR}/os/macos.sh" ;;
-      msys*) . "${DIR}/os/windows.sh" ;;
-          *) exit ;;
-  esac
+    if [ -e "$destination_file" ]; then
+      echo " linked: $destination_file"
+    else
+      echo -e "\x01\e[32m\x02linking:\x01\e[m\x02 $destination_file"
+      ln -sf "$file" "$destination_file"
+    fi
+  done
 }
 
 setup
