@@ -2,6 +2,10 @@
   editor = nano
   autocrlf = input
 
+[alias]
+  default-branch = !git symbolic-ref refs/remotes/origin/HEAD | cut -f4 -d/
+  start          = !git checkout $(git default-branch) && git pull && git clean -fd
+
 [branch]
   sort = -committerdate
 
@@ -16,7 +20,6 @@
 
 [include]
   path = ~/dotfiles/git/id
-  path = ~/dotfiles/git/aliases
   path = ~/dotfiles/git/dev
 
 # Change identity if path includes "shopify"
