@@ -1,0 +1,6 @@
+#!/usr/bin/env zsh
+
+# Get the current directory, truncate it, and make it blue
+truncated_path () {
+  echo -en "%F{cyan}%(5~|%-1~/…/%2~|%4~)%f"
+}

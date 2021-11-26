@@ -2,5 +2,5 @@
 
 setopt prompt_subst
 
-export PS1='$(fancy_dir) $(git_dot)$(chevrons) '
-export RPROMPT='$(git_branch)'
+export PS1='$(truncated_path) $(chevrons) '
+export RPROMPT='$(git_info)'

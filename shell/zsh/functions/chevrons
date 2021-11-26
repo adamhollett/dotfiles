@@ -1,0 +1,30 @@
+#!/usr/bin/env zsh
+
+# Show colorful chevrons according to what season it is.
+chevrons () {
+  local date=$(date)
+  local chevrons="❯❯❯"
+
+  case $date in
+    # spring
+    *Mar*|*Apr*|*May*)
+      chevrons="%F{cyan}❯%F{green}❯%F{yellow}❯%f"
+      ;;
+    # summer
+    *Jun*|*Jul*|*Aug*)
+      chevrons="%F{green}❯%F{yellow}❯%F{red}❯%f"
+      ;;
+    # fall
+    *Sep*|*Oct*|*Nov*)
+      chevrons="%F{yellow}❯%F{red}❯%F{magenta}❯%f"
+      ;;
+    # winter
+    *Dec*|*Jan*|*Feb*)
+      chevrons="%F{magenta}❯%F{cyan}❯%F{green}❯%f"
+      ;;
+    *)
+      ;;
+  esac
+
+  echo $chevrons
+}
