@@ -9,22 +9,29 @@ git_info () {
     local statusDot="●"
     local statusColor="white"
     local statusText=$(git status 2> /dev/null)
-    if [[ $statusText =~ 'no changes added' ]]; then
-      statusDot="○"
-      statusColor="red"
-    elif [[ $statusText =~ 'untracked files present' ]]; then
-      statusDot="○"
-      statusColor="red"
-    elif [[ $statusText =~ 'Changes to be committed' ]]; then
-      statusDot="◍"
-      statusColor="yellow"
-    elif [[ $statusText =~ 'Your branch is ahead' ]]; then
-      statusDot="●"
-      statusColor="cyan"
-    elif [[ $statusText =~ 'working tree clean' ]]; then
-      statusDot="●"
-      statusColor="green"
-    fi
+
+    case $statusText in
+      *"no changes added"*)
+        statusDot="○"
+        statusColor="red"
+        ;;
+      *"untracked files present"*)
+        statusDot="○"
+        statusColor="red"
+        ;;
+      *"Changes to be committed"*)
+        statusDot="◍"
+        statusColor="yellow"
+        ;;
+      *"Your branch is ahead"*)
+        statusDot="●"
+        statusColor="cyan"
+        ;;
+      *)
+        statusDot="●"
+        statusColor="green"
+        ;;
+    esac
 
     # print the branch symbol if on a non-default branch
     if [[ ! $gitBranch =~ (main|master) ]]; then
@@ -37,6 +44,6 @@ git_info () {
     fi
 
     # add the status dot
-    echo -en "%F{"$statusColor"}$statusDot%f "
+    echo -en "%F{$statusColor}$statusDot%f "
   fi
 }
