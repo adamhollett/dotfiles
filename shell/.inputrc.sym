@@ -1,3 +1,5 @@
+#!/usr/bin/env sh
+
 # .inputrc is the readline initialization file.
 
 # Make tab-completion ignore letter casing

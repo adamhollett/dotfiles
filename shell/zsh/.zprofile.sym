@@ -1,11 +1,12 @@
 #!/usr/bin/env zsh
+# shellcheck shell=bash disable=SC2016
 
 # .zprofile is the user-specific initialization file for zsh, and is read
 # by both login and interactive shells, unlike .zshrc.
 
 source ~/dotfiles/shell/common.sh
 
-fpath=($fpath ~/dotfiles/shell/zsh/functions)
+fpath+="$HOME/dotfiles/shell/zsh/functions"
 
 autoload -Uz compinit promptinit chevrons git_info truncated_path
 compinit -i
@@ -17,5 +18,5 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
 setopt prompt_subst
 
-export PS1='$(truncated_path) $(chevrons) '
-export RPROMPT='$(git_info)'
+export PS1; PS1='$(truncated_path) $(chevrons) '
+export RPROMPT; RPROMPT='$(git_info)'

@@ -1,4 +1,5 @@
 #!/bin/false
+# shellcheck shell=bash
 
 ## git
 

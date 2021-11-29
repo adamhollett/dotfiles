@@ -1,4 +1,5 @@
 #!/usr/bin/env zsh
+# shellcheck shell=bash
 
 # Get the current directory, truncate it, and make it blue
 echo -en "%F{cyan}%(5~|%-1~/…/%2~|%4~)%f"

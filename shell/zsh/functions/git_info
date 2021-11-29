@@ -1,13 +1,14 @@
 #!/usr/bin/env zsh
+# shellcheck shell=bash
 
 # Show info on the current git status and branch
-local gitBranch=$(git branch 2> /dev/null | sed -e "/^[^*]/d" -e "s/* \(.*\)/\1/")
+local gitBranch; gitBranch=$(git branch 2> /dev/null | sed -e "/^[^*]/d" -e "s/* \(.*\)/\1/")
 
 # proceed if we're in a git repository
 if [[ $gitBranch ]]; then
   local statusDot="●"
   local statusColor="white"
-  local statusText=$(git status 2> /dev/null)
+  local statusText; statusText=$(git status 2> /dev/null)
 
   case $statusText in
     *"no changes added"*)

@@ -1,4 +1,5 @@
 #!/bin/false
+# shellcheck shell=bash
 
 source ~/dotfiles/shell/functions.sh
 source ~/dotfiles/shell/aliases.sh

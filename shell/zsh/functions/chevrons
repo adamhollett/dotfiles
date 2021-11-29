@@ -1,8 +1,9 @@
 #!/usr/bin/env zsh
+# shellcheck shell=bash
 
 # Show colorful chevrons according to what season it is.
-local date=$(date)
-local chevrons="❯❯❯"
+local date; date=$(date)
+local chevrons; chevrons="❯❯❯"
 
 case $date in
   # spring
