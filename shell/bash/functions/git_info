@@ -36,15 +36,15 @@ git_info () {
 
     # print the branch symbol if on a non-default branch
     if [[ ! $gitBranch =~ (main|master) ]]; then
-      echo -en "\[\e[90m\]⌥\[\e[m\] "
+      echo -en "\x01\e[90m\x02⌥\x01\e[m\x02 "
 
       # add the branch name if we have room
       if [[ $COLUMNS -gt 79 ]]; then
-        echo -en "\[\e[90m\]$gitBranch\[\e[m\] "
+        echo -en "\x01\e[90m\x02$gitBranch\x01\e[m\x02 "
       fi
     fi
 
     # add the status dot
-    echo -en "\[$statusColor\]$statusDot\[\e[m\] "
+    echo -en "\x01$statusColor\x02$statusDot\x01\e[m\x02 "
   fi
 }
