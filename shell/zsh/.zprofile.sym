@@ -4,15 +4,18 @@
 # by both login and interactive shells, unlike .zshrc.
 
 source ~/dotfiles/shell/common.sh
-source ~/dotfiles/shell/zsh/prompt.zsh
 
-autoload -Uz compinit promptinit
+fpath=($fpath ~/dotfiles/shell/zsh/functions)
+
+autoload -Uz compinit promptinit chevrons git_info truncated_path
 compinit -i
 promptinit
 
-fpath=($fpath ~/dotfiles/shell/zsh/functions)
-autoload chevrons
-autoload git_info
-autoload truncated_path
-
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+
+## prompt
+
+setopt prompt_subst
+
+export PS1='$(truncated_path) $(chevrons) '
+export RPROMPT='$(git_info)'

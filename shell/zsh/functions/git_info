@@ -1,49 +1,47 @@
 #!/usr/bin/env zsh
 
 # Show info on the current git status and branch
-git_info () {
-  local gitBranch=$(git branch 2> /dev/null | sed -e "/^[^*]/d" -e "s/* \(.*\)/\1/")
+local gitBranch=$(git branch 2> /dev/null | sed -e "/^[^*]/d" -e "s/* \(.*\)/\1/")
 
-  # proceed if we're in a git repository
-  if [[ $gitBranch ]]; then
-    local statusDot="●"
-    local statusColor="white"
-    local statusText=$(git status 2> /dev/null)
+# proceed if we're in a git repository
+if [[ $gitBranch ]]; then
+  local statusDot="●"
+  local statusColor="white"
+  local statusText=$(git status 2> /dev/null)
 
-    case $statusText in
-      *"no changes added"*)
-        statusDot="○"
-        statusColor="red"
-        ;;
-      *"untracked files present"*)
-        statusDot="○"
-        statusColor="red"
-        ;;
-      *"Changes to be committed"*)
-        statusDot="◍"
-        statusColor="yellow"
-        ;;
-      *"Your branch is ahead"*)
-        statusDot="●"
-        statusColor="cyan"
-        ;;
-      *)
-        statusDot="●"
-        statusColor="green"
-        ;;
-    esac
+  case $statusText in
+    *"no changes added"*)
+      statusDot="○"
+      statusColor="red"
+      ;;
+    *"untracked files present"*)
+      statusDot="○"
+      statusColor="red"
+      ;;
+    *"Changes to be committed"*)
+      statusDot="◍"
+      statusColor="yellow"
+      ;;
+    *"Your branch is ahead"*)
+      statusDot="●"
+      statusColor="cyan"
+      ;;
+    *)
+      statusDot="●"
+      statusColor="green"
+      ;;
+  esac
 
-    # print the branch symbol if on a non-default branch
-    if [[ ! $gitBranch =~ (main|master) ]]; then
-      echo -en "%F{242}⌥%f "
+  # print the branch symbol if on a non-default branch
+  if [[ ! $gitBranch =~ (main|master) ]]; then
+    echo -en "%F{240}⌥%f "
 
-      # add the branch name if we have room
-      if [[ $COLUMNS -gt 79 ]]; then
-        echo -en "%F{247}$gitBranch%f "
-      fi
+    # add the branch name if we have room
+    if [[ $COLUMNS -gt 79 ]]; then
+      echo -en "%F{240}$gitBranch%f "
     fi
-
-    # add the status dot
-    echo -en "%F{$statusColor}$statusDot%f "
   fi
-}
+
+  # add the status dot
+  echo -en "%F{$statusColor}$statusDot%f "
+fi
