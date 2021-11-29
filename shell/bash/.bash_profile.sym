@@ -4,5 +4,7 @@
 # by both login and interactive shells, unlike .bashrc.
 
 source ~/dotfiles/shell/common.sh
-source ~/dotfiles/shell/bash/functions.bash
+source ~/dotfiles/shell/bash/functions/cecho
+source ~/dotfiles/shell/bash/functions/chevrons
+source ~/dotfiles/shell/bash/functions/git_info
 source ~/dotfiles/shell/bash/prompt.bash

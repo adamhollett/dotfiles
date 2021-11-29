@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+
+# Show colorful chevrons according to what season it is.
+chevrons () {
+  local date=""
+  date=$(date)
+  local chevrons="❯❯❯"
+
+  case $date in
+    # spring
+    *Mar*|*Apr*|*May*)
+      chevrons="$(cecho '❯' cyan)$(cecho '❯' green)$(cecho '❯' yellow)"
+      ;;
+    # summer
+    *Jun*|*Jul*|*Aug*)
+      chevrons="$(cecho '❯' green)$(cecho '❯' yellow)$(cecho '❯' red)"
+      ;;
+    # fall
+    *Sep*|*Oct*|*Nov*)
+      chevrons="$(cecho '❯' yellow)$(cecho '❯' red)$(cecho '❯' magenta)"
+      ;;
+    # winter
+    *Dec*|*Jan*|*Feb*)
+      chevrons="$(cecho '❯' magenta)$(cecho '❯' cyan)$(cecho '❯' green)"
+      ;;
+    *)
+      ;;
+  esac
+
+  echo "$chevrons"
+}
