@@ -35,7 +35,7 @@ git_info () {
     esac
 
     # print the branch symbol if on a non-default branch
-    if [[ ! $gitBranch =~ (main|master) ]]; then
+    if [[ ! $gitBranch =~ (^main$|^master$) ]]; then
       echo -en "\x01\e[90m\x02⌥\x01\e[m\x02 "
 
       # add the branch name if we have room

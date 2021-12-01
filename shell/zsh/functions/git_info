@@ -34,7 +34,7 @@ if [[ $gitBranch ]]; then
   esac
 
   # print the branch symbol if on a non-default branch
-  if [[ ! $gitBranch =~ (main|master) ]]; then
+  if [[ ! $gitBranch =~ (^main$|^master$) ]]; then
     echo -en "%F{240}⌥%f "
 
     # add the branch name if we have room
