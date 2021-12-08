@@ -51,6 +51,7 @@ alias  gs='git stash -u'
 alias gss='git stash save -u'
 alias gsl='git stash list'
 alias gsp='git stash pop'
+alias gsd='git stash drop'
 
 ## Node
 
