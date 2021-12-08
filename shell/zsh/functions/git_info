@@ -2,7 +2,7 @@
 # shellcheck shell=bash
 
 # Show info on the current git status and branch
-local gitBranch; gitBranch=$(git branch 2> /dev/null | sed -e "/^[^*]/d" -e "s/* \(.*\)/\1/")
+local gitBranch; gitBranch=$(git branch --show-current 2> /dev/null)
 
 # proceed if we're in a git repository
 if [[ $gitBranch ]]; then
@@ -35,14 +35,14 @@ if [[ $gitBranch ]]; then
 
   # print the branch symbol if on a non-default branch
   if [[ ! $gitBranch =~ (^main$|^master$) ]]; then
-    echo -en "%F{240}⌥%f "
+    echo -n "%F{240}⌥%f "
 
     # add the branch name if we have room
     if [[ $COLUMNS -gt 79 ]]; then
-      echo -en "%F{240}$gitBranch%f "
+      echo -n "%F{240}$gitBranch%f "
     fi
   fi
 
   # add the status dot
-  echo -en "%F{$statusColor}$statusDot%f "
+  echo "%F{$statusColor}$statusDot%f "
 fi
