@@ -20,3 +20,10 @@ setopt prompt_subst
 
 export PS1; PS1='$(truncated_path) $(chevrons) '
 export RPROMPT; RPROMPT='$(git_info)'
+
+
+## backspace
+
+# command + <- delete will clear to beginning of line 
+# https://stackoverflow.com/questions/15733312/iterm2-delete-line
+bindkey "^X\x7f" backward-kill-line
