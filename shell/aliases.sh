@@ -25,10 +25,6 @@ alias gfa='git fetch --all'
 alias gfc='git clone'
 alias gfm='git pull'
 
-### clean
-
-alias gcfd='git clean -fd'
-
 ### index
 
 alias  ga='git add'
