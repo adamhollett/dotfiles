@@ -13,25 +13,15 @@ git_info () {
 
     case $statusText in
       *"no changes added"*)
-        statusDot="○"
-        statusColor="\e[31m"
-        ;;
-      *"untracked files present"*)
-        statusDot="○"
-        statusColor="\e[31m"
-        ;;
-      *"Changes to be committed"*)
-        statusDot="◍"
-        statusColor="\e[33m"
-        ;;
-      *"Your branch is ahead"*)
-        statusDot="●"
-        statusColor="\e[36m"
-        ;;
-      *)
-        statusDot="●"
-        statusColor="\e[32m"
-        ;;
+      statusDot="○"; statusColor="\e[31m" ;;
+    *"untracked files present"*)
+      statusDot="○"; statusColor="\e[31m" ;;
+    *"Changes to be committed"*)
+      statusDot="◍"; statusColor="\e[33m" ;;
+    *"Your branch is ahead"*)
+      statusDot="●"; statusColor="\e[36m" ;;
+    *)
+      statusDot="●"; statusColor="\e[32m" ;;
     esac
 
     # print the branch symbol if on a non-default branch

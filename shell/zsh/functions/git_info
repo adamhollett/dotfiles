@@ -12,37 +12,27 @@ if [[ $gitBranch ]]; then
 
   case $statusText in
     *"no changes added"*)
-      statusDot="○"
-      statusColor="red"
-      ;;
+      statusDot="○"; statusColor="\e[31m" ;;
     *"untracked files present"*)
-      statusDot="○"
-      statusColor="red"
-      ;;
+      statusDot="○"; statusColor="\e[31m" ;;
     *"Changes to be committed"*)
-      statusDot="◍"
-      statusColor="yellow"
-      ;;
+      statusDot="◍"; statusColor="\e[33m" ;;
     *"Your branch is ahead"*)
-      statusDot="●"
-      statusColor="cyan"
-      ;;
+      statusDot="●"; statusColor="\e[36m" ;;
     *)
-      statusDot="●"
-      statusColor="green"
-      ;;
+      statusDot="●"; statusColor="\e[32m" ;;
   esac
 
   # print the branch symbol if on a non-default branch
   if [[ ! $gitBranch =~ (^main$|^master$) ]]; then
-    echo -n "%F{240}⌥%f "
+    echo -n "%{\e[90m%}⌥%{\e[m%} "
 
     # add the branch name if we have room
     if [[ $COLUMNS -gt 79 ]]; then
-      echo -n "%F{240}$gitBranch%f "
+      echo -n "%{\e[90m%}$gitBranch%{\e[m%} "
     fi
   fi
 
   # add the status dot
-  echo "%F{$statusColor}$statusDot%f "
+  echo -n "%{$statusColor%}$statusDot%{\e[m%} "
 fi
