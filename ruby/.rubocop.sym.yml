@@ -7,9 +7,14 @@ AllCops:
   Exclude:
     - "node_modules/**/*"
     - "vendor/**/*"
+    - "bin/bundle"
 
 Style/StringLiterals:
   EnforcedStyle: double_quotes
+
+Style/FrozenStringLiteralComment:
+  Include:
+    - "**/*.rb"
 
 Style/MethodCallWithArgsParentheses:
   Enabled: false
