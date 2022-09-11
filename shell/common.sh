@@ -4,6 +4,7 @@
 source   ~/dotfiles/shell/functions.sh
 source   ~/dotfiles/shell/aliases.sh
 sourceif ~/dotfiles/shell/shopify.sh
+sourceif /usr/local/opt/asdf/libexec/asdf.sh
 sourceif /usr/local/share/chruby/chruby.sh
 sourceif /usr/local/share/chruby/auto.sh
 
