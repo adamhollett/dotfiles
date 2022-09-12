@@ -12,11 +12,12 @@ alias gwR='git reset --hard'
 
 ### branch
 
-alias  gb='git branch'
-alias gbc='git checkout -b'
-alias gbd='git branch --delete'
-alias gbD='git branch --delete --force'
-alias gco='git checkout'
+alias   gb='git branch'
+alias  gbc='git checkout -b'
+alias  gbd='git branch --delete'
+alias  gbD='git branch --delete --force'
+alias gbdm='git branch --merged | egrep -v "(^\*|master|main|dev)" | xargs git branch -d'
+alias  gco='git checkout'
 
 ### fetch
 
