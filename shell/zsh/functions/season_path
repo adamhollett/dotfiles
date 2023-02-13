@@ -1,0 +1,29 @@
+#!/usr/bin/env zsh
+# shellcheck shell=bash
+
+# Show colorful chevrons according to what season it is.
+local date; date=$(date)
+local path; path="%(5~|%-1~/…/%2~|%4~)"
+
+case $date in
+  # spring
+  *Mar*|*Apr*|*May*)
+    path="%F{cyan}$path%f"
+    ;;
+  # summer
+  *Jun*|*Jul*|*Aug*)
+    path="%F{green}$path%f"
+    ;;
+  # fall
+  *Sep*|*Oct*|*Nov*)
+    path="%F{yellow}$path%f"
+    ;;
+  # winter
+  *Dec*|*Jan*|*Feb*)
+    path="%F{magenta}$path%f"
+    ;;
+  *)
+    ;;
+esac
+
+echo "$path"

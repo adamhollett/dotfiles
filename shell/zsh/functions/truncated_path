@@ -1,5 +1,0 @@
-#!/usr/bin/env zsh
-# shellcheck shell=bash
-
-# Get the current directory, truncate it, and make it blue
-echo -en "%{\e[36m%}%(5~|%-1~/…/%2~|%4~)%{\e[m%}"
