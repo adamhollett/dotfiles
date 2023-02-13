@@ -8,7 +8,7 @@ source ~/dotfiles/shell/common.sh
 
 fpath+="$HOME/dotfiles/shell/zsh/functions"
 
-autoload -Uz compinit promptinit git_info season_chevrons season_path
+autoload -Uz compinit promptinit git_info season_prompt
 compinit -i
 promptinit
 
@@ -18,5 +18,5 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
 setopt prompt_subst
 
-export PS1; PS1='$(season_path) $(season_chevrons) '
+export PS1; PS1='$(season_prompt) '
 export RPROMPT; RPROMPT='$(git_info)'

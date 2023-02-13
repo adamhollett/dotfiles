@@ -3,27 +3,32 @@
 
 # Show colorful chevrons according to what season it is.
 local date; date=$(date)
+local path; path="%(5~|%-1~/…/%2~|%4~)"
 local chevrons; chevrons="❯❯"
 
 case $date in
   # spring
   *Mar*|*Apr*|*May*)
+    path="%F{cyan}$path%f"
     chevrons="%F{green}❯%F{yellow}❯%f"
     ;;
   # summer
   *Jun*|*Jul*|*Aug*)
+    path="%F{green}$path%f"
     chevrons="%F{yellow}❯%F{red}❯%f"
     ;;
   # fall
   *Sep*|*Oct*|*Nov*)
+    path="%F{yellow}$path%f"
     chevrons="%F{red}❯%F{magenta}❯%f"
     ;;
   # winter
   *Dec*|*Jan*|*Feb*)
+    path="%F{magenta}$path%f"
     chevrons="%F{cyan}❯%F{green}❯%f"
     ;;
   *)
     ;;
 esac
 
-echo $chevrons
+echo "$path $chevrons"
