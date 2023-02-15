@@ -3,7 +3,7 @@ inherit_gem:
   rubocop-shopify: rubocop.yml
 
 AllCops:
-  TargetRubyVersion: 2.7
+  TargetRubyVersion: 3.1 # Match this to .ruby-version
   Exclude:
     - "db/**/*"
     - "node_modules/**/*"
