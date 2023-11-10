@@ -7,25 +7,29 @@ local path; path="%(5~|%-1~/…/%2~|%4~)"
 local chevrons; chevrons="❯❯"
 
 case $date in
-  # spring
-  *Mar*|*Apr*|*May*)
-    path="%F{cyan}$path%f"
-    chevrons="%F{green}❯%F{yellow}❯%f"
+  *14\ Feb*) # Valentine's Day
+    path="%F{#F8BBD0}$path"; chevrons="%F{#F06292}❥%F{#E91E63}❥"
     ;;
-  # summer
-  *Jun*|*Jul*|*Aug*)
-    path="%F{green}$path%f"
-    chevrons="%F{yellow}❯%F{red}❯%f"
+  *17\ Mar*) # St. Patrick's Day
+    path="%F{#C8E6C9}$path"; chevrons="%F{#81C784}❯%F{#4CAF50}❯"
     ;;
-  # fall
-  *Sep*|*Oct*|*Nov*)
-    path="%F{yellow}$path%f"
-    chevrons="%F{red}❯%F{magenta}❯%f"
+  *4\ Jul*) # Independence Day
+    path="%F{#EF9A9A}$path"; chevrons="%F{#EEEEEE}❯%F{#90CAF9}❯"
     ;;
-  # winter
-  *Dec*|*Jan*|*Feb*)
-    path="%F{magenta}$path%f"
-    chevrons="%F{cyan}❯%F{green}❯%f"
+  *24\ Dec*|*25\ Dec*) # Christmas
+    path="%F{#DCEDC8}$path"; chevrons="%F{#E57373}❯%F{#AED581}❯"
+    ;;
+  *Mar*|*Apr*|*May*) # spring
+    path="%F{cyan}$path%f"; chevrons="%F{green}❯%F{yellow}❯%f"
+    ;;
+  *Jun*|*Jul*|*Aug*) # summer
+    path="%F{green}$path%f"; chevrons="%F{yellow}❯%F{red}❯%f"
+    ;;
+  *Sep*|*Oct*|*Nov*) # fall
+    path="%F{yellow}$path%f"; chevrons="%F{red}❯%F{magenta}❯%f"
+    ;;
+  *Dec*|*Jan*|*Feb*) # winter
+    path="%F{magenta}$path%f"; chevrons="%F{cyan}❯%F{green}❯%f"
     ;;
   *)
     ;;
