@@ -2,6 +2,9 @@
   editor = nano
   autocrlf = input
 
+[init]
+	defaultBranch = main
+
 [alias]
   main-branch = !git symbolic-ref refs/remotes/origin/HEAD | cut -f4 -d/
   start       = !git checkout $(git main-branch) && git pull && git clean -fd
