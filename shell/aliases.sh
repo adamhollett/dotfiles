@@ -40,6 +40,7 @@ alias gcam='git commit --all --message'
 
 alias  gp='git push'
 alias gpc='git push --set-upstream origin `git rev-parse --abbrev-ref HEAD`'
+alias gsc='git push --set-upstream origin +`git rev-parse --abbrev-ref HEAD`'
 alias gpo='git push origin'
 
 ### stash
