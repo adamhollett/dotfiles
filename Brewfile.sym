@@ -1,8 +1,6 @@
 cask "1password"
 cask "appcleaner"
 cask "bluesnooze"
-cask "google-chrome"
-cask "google-drive"
 cask "insomnia"
 cask "iterm2"
 cask "muzzle"
