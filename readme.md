@@ -1,6 +1,6 @@
 # dotfiles
 
-![](https://user-images.githubusercontent.com/6955296/218800662-8dbe06c3-279b-4f9d-9af5-58bc11f33ed4.gif)
+![A shell prompt in many colours](https://user-images.githubusercontent.com/6955296/218800662-8dbe06c3-279b-4f9d-9af5-58bc11f33ed4.gif)
 
 Fork this repo and clone it in your home directory so that you get `~/dotfiles`.
 
@@ -16,11 +16,11 @@ If you have existing configs in these files, please **back them up** as this can
 
 **Note**: In Windows, run the setup script using the [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10) (WSL) or [Git Bash for Windows](https://git-for-windows.github.io).
 
-### Identity
+## Identity
 
 You can add your git identity to `git/.gitconfig`, or in a file at `git/id` and it will be included:
 
-```
+``` gitconfig
 [user]
   name = Your Name
   email = your@email.com

@@ -10,7 +10,7 @@ sourceif /usr/local/share/chruby/auto.sh
 
 ## homebrew
 
-[[ -x /opt/homebrew/bin/brew ]] && eval $(/opt/homebrew/bin/brew shellenv)
+[[ -x /opt/homebrew/bin/brew ]] && eval "$(/opt/homebrew/bin/brew shellenv)"
 
 ## nvm
 
