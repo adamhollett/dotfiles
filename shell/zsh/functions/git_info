@@ -25,14 +25,14 @@ if [[ $gitBranch ]]; then
 
   # print the branch symbol if on a non-default branch
   if [[ ! $gitBranch =~ (^main$|^master$) ]]; then
-    echo -n "%{\e[90m%}⌥%{\e[m%} "
+    echo -en "%{\e[02m%}⌥%{\e[m%} "
 
     # add the branch name if we have room
     if [[ $COLUMNS -gt 79 ]]; then
-      echo -n "%{\e[90m%}$gitBranch%{\e[m%} "
+      echo -en "%{\e[02m%}$gitBranch%{\e[m%} "
     fi
   fi
 
   # add the status dot
-  echo -n "%{$statusColor%}$statusDot%{\e[m%} "
+  echo -en "%{$statusColor%}$statusDot%{\e[m%} "
 fi

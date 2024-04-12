@@ -26,11 +26,11 @@ git_info () {
 
     # print the branch symbol if on a non-default branch
     if [[ ! $gitBranch =~ (^main$|^master$) ]]; then
-      echo -en "\x01\e[90m\x02⌥\x01\e[m\x02 "
+      echo -en "\x01\e[02m\x02⌥\x01\e[m\x02 "
 
       # add the branch name if we have room
       if [[ $COLUMNS -gt 79 ]]; then
-        echo -en "\x01\e[90m\x02$gitBranch\x01\e[m\x02 "
+        echo -en "\x01\e[02m\x02$gitBranch\x01\e[m\x02 "
       fi
     fi
 
