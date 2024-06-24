@@ -1,38 +1,23 @@
 #!/usr/bin/env zsh
 # shellcheck shell=bash
 
-# Show colorful chevrons according to what season it is.
 local date; date=$(date)
-local path; path="%(5~|%-1~/…/%2~|%4~)"
-local chevrons; chevrons="❯❯"
+local path; path="${PWD/#$HOME/~}"
 
 case $date in
-  *14\ Feb*) # Valentine's Day
-    path="%F{#F8BBD0}$path"; chevrons="%F{#F06292}❥%F{#E91E63}❥"
-    ;;
-  *17\ Mar*) # St. Patrick's Day
-    path="%F{#C8E6C9}$path"; chevrons="%F{#81C784}❯%F{#4CAF50}❯"
-    ;;
-  *4\ Jul*) # Independence Day
-    path="%F{#EF9A9A}$path"; chevrons="%F{#EEEEEE}❯%F{#90CAF9}❯"
-    ;;
-  *24\ Dec*|*25\ Dec*) # Christmas
-    path="%F{#DCEDC8}$path"; chevrons="%F{#E57373}❯%F{#AED581}❯"
-    ;;
   *Mar*|*Apr*|*May*) # spring
-    path="%F{cyan}$path%f"; chevrons="%F{green}❯%F{yellow}❯%f"
+    printf "%s" "%F{cyan}$path %F{green}❯%F{yellow}❯%f"
     ;;
   *Jun*|*Jul*|*Aug*) # summer
-    path="%F{green}$path%f"; chevrons="%F{yellow}❯%F{red}❯%f"
+    printf "%s" "%F{green}$path %F{yellow}❯%F{red}❯%f"
     ;;
   *Sep*|*Oct*|*Nov*) # fall
-    path="%F{yellow}$path%f"; chevrons="%F{red}❯%F{magenta}❯%f"
+    printf "%s" "%F{yellow}$path %F{red}❯%F{magenta}❯%f"
     ;;
   *Dec*|*Jan*|*Feb*) # winter
-    path="%F{magenta}$path%f"; chevrons="%F{cyan}❯%F{green}❯%f"
+    printf "%s" "%F{magenta}$path %F{cyan}❯%F{green}❯%f"
     ;;
   *)
+    printf "%s" "$path ❯❯"
     ;;
 esac
-
-echo "$path $chevrons"

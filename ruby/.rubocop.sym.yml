@@ -1,6 +1,5 @@
-# Use Shopify Ruby style
 inherit_gem:
-  rubocop-shopify: rubocop.yml
+  rubocop-shopify: rubocop.yml # Use Shopify Ruby style
 
 AllCops:
   TargetRubyVersion: 3.2 # Match this to .ruby-version
@@ -10,15 +9,14 @@ AllCops:
     - "vendor/**/*"
     - "bin/bundle"
 
-Style/StringLiterals:
-  EnforcedStyle: double_quotes
+Layout/EmptyLineAfterMagicComment:
+  Enabled: true
 
 Style/FrozenStringLiteralComment:
-  Include:
-    - "**/*.rb"
+  Enabled: false
 
 Style/MethodCallWithArgsParentheses:
   Enabled: false
 
-Layout/EmptyLineAfterMagicComment:
-  Enabled: true
+Style/StringLiterals:
+  EnforcedStyle: double_quotes

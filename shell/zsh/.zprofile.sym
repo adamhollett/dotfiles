@@ -18,5 +18,8 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
 setopt prompt_subst
 
-export PS1; PS1='$(season_prompt) '
-export RPROMPT; RPROMPT='$(git_info)'
+PS1='$(season_prompt) '
+RPROMPT='$(git_info)'
+
+export PS1
+export RPROMPT
