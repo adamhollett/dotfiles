@@ -8,10 +8,6 @@ source ~/dotfiles/shell/bash/functions/cecho
 source ~/dotfiles/shell/bash/functions/chevrons
 source ~/dotfiles/shell/bash/functions/git_info
 
-## mise
-
-[[ -x /usr/local/bin/mise ]] && eval "$(/usr/local/bin/mise activate bash)"
-
 ## prompt
 
 PROMPT_DIRTRIM=2

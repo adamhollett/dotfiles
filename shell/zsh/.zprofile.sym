@@ -14,10 +14,6 @@ promptinit
 
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
-## mise
-
-[[ -x /usr/local/bin/mise ]] && eval "$(/usr/local/bin/mise activate zsh)"
-
 ## prompt
 
 setopt prompt_subst
