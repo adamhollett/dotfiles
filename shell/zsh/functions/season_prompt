@@ -4,6 +4,9 @@
 local date; date=$(date)
 local path; path="${PWD/#$HOME/~}"
 
+common="src/github.com"
+path="${path/$common/⋯}"
+
 case $date in
   *Mar*|*Apr*|*May*) # spring
     printf "%s" "%F{cyan}$path %F{green}❯%F{yellow}❯%f"
