@@ -7,6 +7,7 @@
 source ~/dotfiles/shell/common.sh
 
 fpath+="$HOME/dotfiles/shell/zsh/functions"
+fpath+="$ASDF_DIR/completions"
 
 autoload -Uz compinit promptinit git_info season_prompt
 compinit -i
