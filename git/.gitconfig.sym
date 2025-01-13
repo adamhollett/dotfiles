@@ -6,9 +6,9 @@
 	defaultBranch = main
 
 [alias]
-  amend       = commit --amend --no-edit
-  main-branch = !git symbolic-ref refs/remotes/origin/HEAD | cut -f4 -d/
-  start       = !git checkout $(git main-branch) && git pull && git clean -fd
+  amend         = commit --amend --no-edit
+  checkout-main = !git checkout main 2>/dev/null || git checkout master
+  start         = !git checkout-main && git pull && git clean -fd
 
 [branch]
   sort = -committerdate
