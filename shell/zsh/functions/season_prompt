@@ -7,20 +7,30 @@ local path; path="${PWD/#$HOME/~}"
 common="src/github.com"
 path="${path/$common/⋯}"
 
+get_lang_symbols() {
+  local symbols=""
+  [[ -f requirements.txt ]] && symbols+="%F{blue}⏺︎%f "
+  [[ -f Gemfile ]] && symbols+="%F{red}⬙%f "
+  [[ -f package.json ]] && symbols+="%F{yellow}■%f "
+  echo -en "$symbols"
+}
+
+lang_symbols=$(get_lang_symbols)
+
 case $date in
   *Mar*|*Apr*|*May*) # spring
-    printf "%s" "%F{cyan}$path %F{green}❯%F{yellow}❯%f"
+    printf "%s" "%F{cyan}$path $lang_symbols%F{green}❯%F{yellow}❯%f"
     ;;
   *Jun*|*Jul*|*Aug*) # summer
-    printf "%s" "%F{green}$path %F{yellow}❯%F{red}❯%f"
+    printf "%s" "%F{green}$path $lang_symbols%F{yellow}❯%F{red}❯%f"
     ;;
   *Sep*|*Oct*|*Nov*) # fall
-    printf "%s" "%F{yellow}$path %F{red}❯%F{magenta}❯%f"
+    printf "%s" "%F{yellow}$path $lang_symbols%F{red}❯%F{magenta}❯%f"
     ;;
   *Dec*|*Jan*|*Feb*) # winter
-    printf "%s" "%F{magenta}$path %F{cyan}❯%F{green}❯%f"
+    printf "%s" "%F{magenta}$path $lang_symbols%F{cyan}❯%F{green}❯%f"
     ;;
   *)
-    printf "%s" "$path ❯❯"
+    printf "%s" "$path $lang_symbols❯❯"
     ;;
 esac
