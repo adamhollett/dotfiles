@@ -3,7 +3,6 @@
 
 source   ~/dotfiles/shell/functions.sh
 source   ~/dotfiles/shell/aliases.sh
-sourceif ~/dotfiles/shell/shopify.sh
 sourceif ~/.asdf/asdf.sh
 
 ## homebrew

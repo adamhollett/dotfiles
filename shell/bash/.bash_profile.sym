@@ -1,15 +1,6 @@
 #!/usr/bin/env bash
 
-# .bash_profile is the user-specific initialization file for bash, and is read
-# by both login and interactive shells, unlike .bashrc.
-
-source ~/dotfiles/shell/common.sh
-source ~/dotfiles/shell/bash/functions/cecho
-source ~/dotfiles/shell/bash/functions/chevrons
-source ~/dotfiles/shell/bash/functions/git_info
-
-## prompt
-
-PROMPT_DIRTRIM=2
-
-export PS1='$(cecho "\w" cyan) $(git_info)$(chevrons) '
+# Load .bashrc if it exists
+if [ -f ~/.bashrc ]; then
+  source ~/.bashrc
+fi

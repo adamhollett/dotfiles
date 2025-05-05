@@ -1,0 +1,23 @@
+#!/usr/bin/env zsh
+# shellcheck shell=bash disable=SC2016
+
+source ~/dotfiles/shell/common.sh
+
+fpath+="$HOME/dotfiles/shell/zsh/functions"
+fpath+="$ASDF_DIR/completions"
+
+autoload -Uz compinit promptinit git_info season_prompt
+compinit -i
+promptinit
+
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+
+## prompt
+
+setopt prompt_subst
+
+PS1='$(season_prompt) '
+RPROMPT='$(git_info)'
+
+export PS1
+export RPROMPT

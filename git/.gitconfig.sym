@@ -25,7 +25,3 @@
 [include]
   path = ~/dotfiles/git/id
 	path = ~/.config/dev/gitconfig
-
-# Extra config if path includes "shopify"
-[includeIf "gitdir/i:**/shopify/**"]
-  path = ~/dotfiles/git/shopify
