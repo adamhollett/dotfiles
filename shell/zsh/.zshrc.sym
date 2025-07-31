@@ -12,6 +12,13 @@ promptinit
 
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
+# bun completions
+[ -s "/Users/adam/.bun/_bun" ] && source "/Users/adam/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
 ## prompt
 
 setopt prompt_subst

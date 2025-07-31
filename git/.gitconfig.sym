@@ -1,6 +1,7 @@
 [core]
   editor = nano
   autocrlf = input
+	excludesfile = /Users/adam/.gitignore_global
 
 [init]
 	defaultBranch = main
@@ -24,4 +25,3 @@
 
 [include]
   path = ~/dotfiles/git/id
-	path = ~/.config/dev/gitconfig
