@@ -1,8 +1,6 @@
-inherit_gem:
-  rubocop-shopify: rubocop.yml # Use Shopify Ruby style
-
 AllCops:
-  TargetRubyVersion: 3.2 # Match this to .ruby-version
+  TargetRubyVersion: 3.4 # Match this to .ruby-version
+  NewCops: enable
   Exclude:
     - "db/**/*"
     - "node_modules/**/*"
@@ -11,6 +9,9 @@ AllCops:
 
 Layout/EmptyLineAfterMagicComment:
   Enabled: true
+
+Style/Documentation:
+  Enabled: false
 
 Style/FrozenStringLiteralComment:
   Enabled: false

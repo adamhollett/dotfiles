@@ -12,6 +12,9 @@ promptinit
 
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
+# mise
+eval "$(~/.local/bin/mise activate)"
+
 # bun completions
 [ -s "/Users/adam/.bun/_bun" ] && source "/Users/adam/.bun/_bun"
 
