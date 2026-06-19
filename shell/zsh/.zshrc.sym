@@ -7,7 +7,13 @@ fpath+="$HOME/dotfiles/shell/zsh/functions"
 fpath+="$ASDF_DIR/completions"
 
 autoload -Uz compinit promptinit git_info season_prompt
-compinit -i
+
+if [ "$(date +'%j')" != "$(stat -f '%Sm' -t '%j' ~/.zcompdump 2>/dev/null)" ]; then
+    compinit
+else
+    compinit -C
+fi
+
 promptinit
 
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
@@ -25,7 +31,7 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
 # bun completions
-[ -s "~/.bun/_bun" ] && source "~/.bun/_bun"
+sourceif ~/.bun/_bun
 
 ## prompt
 

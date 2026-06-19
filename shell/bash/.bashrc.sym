@@ -6,7 +6,7 @@ source ~/dotfiles/shell/bash/functions/chevrons
 source ~/dotfiles/shell/bash/functions/git_info
 
 # bun completions
-[ -s "/Users/adam/.bun/_bun" ] && source "/Users/adam/.bun/_bun"
+sourceif ~/.bun/_bun
 
 # bun
 export BUN_INSTALL="$HOME/.bun"

@@ -16,7 +16,7 @@ alias   gb='git branch'
 alias  gbc='git checkout -b'
 alias  gbd='git branch --delete'
 alias  gbD='git branch --delete --force'
-alias gbdm='git branch --merged | egrep -v "(^\*|master|main|dev)" | xargs git branch -d'
+alias gbdm='git branch --merged | grep -Ev "(^\*|master|main|dev)" | xargs git branch -d'
 alias  gco='git checkout'
 
 ### fetch
@@ -39,8 +39,8 @@ alias gcam='git commit --all --message'
 ### push
 
 alias  gp='git push'
-alias gpc='git push --set-upstream origin `git rev-parse --abbrev-ref HEAD`' # "push current"
-alias gsc='git push --set-upstream origin +`git rev-parse --abbrev-ref HEAD`' # "shove current"
+alias gpc='git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)' # "push current"
+alias gsc='git push --set-upstream origin +$(git rev-parse --abbrev-ref HEAD)' # "shove current"
 alias gpo='git push origin'
 
 ### stash
