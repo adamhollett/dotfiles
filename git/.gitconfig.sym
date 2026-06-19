@@ -1,7 +1,7 @@
 [core]
   editor = nano
   autocrlf = input
-	excludesfile = /Users/adam/.gitignore_global
+	excludesfile = ~/.gitignore_global
 
 [init]
 	defaultBranch = main
@@ -11,14 +11,23 @@
   checkout-main = !git checkout main 2>/dev/null || git checkout master
   start         = !git checkout-main && git pull && git clean -fd
 
+[status]
+  showUntrackedFiles = all
+
 [branch]
   sort = -committerdate
 
 [fetch]
   prune = true
+  pruneTags = true
 
 [pull]
-  rebase = false
+  rebase = true
+  tags = true
+
+[push]
+  default = current
+  followTags = true
 
 [rebase]
   autoStash = true

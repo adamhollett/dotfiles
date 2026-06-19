@@ -12,15 +12,20 @@ promptinit
 
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
-# mise
-eval "$(~/.local/bin/mise activate)"
+sourceif ~/dotfiles/shell/zsh/.zshrc.jane
 
-# bun completions
-[ -s "/Users/adam/.bun/_bun" ] && source "/Users/adam/.bun/_bun"
+# brew
+eval "$(/opt/homebrew/bin/brew shellenv zsh)"
+
+# mise
+[[ -f ~/.local/bin/mise ]] && eval "$(~/.local/bin/mise activate)"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# bun completions
+[ -s "~/.bun/_bun" ] && source "~/.bun/_bun"
 
 ## prompt
 

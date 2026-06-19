@@ -39,8 +39,8 @@ alias gcam='git commit --all --message'
 ### push
 
 alias  gp='git push'
-alias gpc='git push --set-upstream origin `git rev-parse --abbrev-ref HEAD`'
-alias gsc='git push --set-upstream origin +`git rev-parse --abbrev-ref HEAD`'
+alias gpc='git push --set-upstream origin `git rev-parse --abbrev-ref HEAD`' # "push current"
+alias gsc='git push --set-upstream origin +`git rev-parse --abbrev-ref HEAD`' # "shove current"
 alias gpo='git push origin'
 
 ### stash
@@ -65,4 +65,4 @@ alias ls='ls -G'
 
 ## fun
 
-alias hack='open http://hackertyper.net'
+alias hack='open https://hackertyper.net'
