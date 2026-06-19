@@ -9,23 +9,23 @@ chevrons () {
   case $date in
     # spring
     *Mar*|*Apr*|*May*)
-      chevrons="$(cecho '❯' cyan)$(cecho '❯' green)$(cecho '❯' yellow)"
+      chevrons="$(cprint '❯' green)$(cprint '❯' yellow)"
       ;;
     # summer
     *Jun*|*Jul*|*Aug*)
-      chevrons="$(cecho '❯' green)$(cecho '❯' yellow)$(cecho '❯' red)"
+      chevrons="$(cprint '❯' yellow)$(cprint '❯' red)"
       ;;
     # fall
     *Sep*|*Oct*|*Nov*)
-      chevrons="$(cecho '❯' yellow)$(cecho '❯' red)$(cecho '❯' magenta)"
+      chevrons="$(cprint '❯' red)$(cprint '❯' magenta)"
       ;;
     # winter
     *Dec*|*Jan*|*Feb*)
-      chevrons="$(cecho '❯' magenta)$(cecho '❯' cyan)$(cecho '❯' green)"
+      chevrons="$(cprint '❯' cyan)$(cprint '❯' green)"
       ;;
     *)
       ;;
   esac
 
-  echo "$chevrons"
+  printf "%s" "$chevrons"
 }

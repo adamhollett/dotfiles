@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+
+# Print a message in color.
+# https://bytefreaks.net/gnulinux/bash/cecho-a-function-to-print-using-different-colors-in-bash
+cprint () {
+  local prompt=0
+  if [[ ${1:-} == -p ]]; then
+    prompt=1
+    shift
+  fi
+
+  local message=${1:-""}
+  local   color=${2:-"default"}
+
+  local color_code
+  case $color in
+            default) color_code="\e[39m" ;;
+              black) color_code="\e[30m" ;;
+                red) color_code="\e[31m" ;;
+              green) color_code="\e[32m" ;;
+             yellow) color_code="\e[33m" ;;
+               blue) color_code="\e[34m" ;;
+            magenta) color_code="\e[35m" ;;
+               cyan) color_code="\e[36m" ;;
+               gray) color_code="\e[37m" ;;
+          light-red) color_code="\e[91m" ;;
+        light-green) color_code="\e[92m" ;;
+       light-yellow) color_code="\e[93m" ;;
+         light-blue) color_code="\e[94m" ;;
+      light-magenta) color_code="\e[95m" ;;
+         light-cyan) color_code="\e[96m" ;;
+         light-gray) color_code="\e[97m" ;;
+                  *) color_code="\e[39m" ;;
+  esac
+
+  if (( prompt )); then
+    printf "\x01${color_code}\x02%s\x01\e[m\x02" "$message"
+  else
+    printf "${color_code}%s\e[m" "$message"
+  fi
+}
