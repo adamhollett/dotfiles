@@ -18,7 +18,10 @@ promptinit
 
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
-sourceif ~/dotfiles/shell/zsh/.zshrc.jane
+# private (git ignored) additions
+for file in ~/dotfiles/shell/zsh/private/*(N.); do
+  . "$file"
+done
 
 # brew
 eval "$(/opt/homebrew/bin/brew shellenv zsh)"
