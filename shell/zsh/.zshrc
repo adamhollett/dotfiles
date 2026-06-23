@@ -9,9 +9,9 @@ fpath+="$ASDF_DIR/completions"
 autoload -Uz compinit promptinit git_info season_prompt
 
 if [ "$(date +'%j')" != "$(stat -f '%Sm' -t '%j' ~/.zcompdump 2>/dev/null)" ]; then
-    compinit
+  compinit
 else
-    compinit -C
+  compinit -C
 fi
 
 promptinit

@@ -6,7 +6,7 @@ Fork this repo and clone it in your home directory so that you get `~/dotfiles`.
 
 Please explore a little before running the setup script.
 
-The setup script will symlink to your home directory any files in this repo with `.sym` in their name. For example, `/shell/bash/.bashrc.sym` will be symlinked to `~/.bashrc`.
+The setup script will symlink to your home directory the files listed in setup.sh.
 
 If you have existing configs in these files, please **back them up** as this can overwrite them:
 
