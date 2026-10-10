@@ -3,6 +3,9 @@
   autocrlf = input
 	excludesfile = ~/.gitignore_global
 
+[include]
+  path = ~/dotfiles/git/id
+
 [init]
 	defaultBranch = main
 
@@ -31,6 +34,3 @@
 
 [rebase]
   autoStash = true
-
-[include]
-  path = ~/dotfiles/git/id

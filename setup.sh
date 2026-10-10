@@ -34,10 +34,6 @@ setup () {
   link_file "$SELF_PATH/shell/.asdfrc" "$HOME/.asdfrc"
   link_file "$SELF_PATH/shell/.shellcheckrc" "$HOME/.shellcheckrc"
   link_file "$SELF_PATH/editor/.editorconfig" "$HOME/.editorconfig"
-
-  # Claude
-  mkdir -p "$HOME/.claude"
-  link_file "$SELF_PATH/ai/CLAUDE.md" "$HOME/.claude/CLAUDE.md"
 }
 
 setup

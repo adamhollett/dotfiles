@@ -29,13 +29,6 @@ eval "$(/opt/homebrew/bin/brew shellenv zsh)"
 # mise
 [[ -f ~/.local/bin/mise ]] && eval "$(~/.local/bin/mise activate)"
 
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-
-# bun completions
-sourceif ~/.bun/_bun
-
 ## prompt
 
 setopt prompt_subst
